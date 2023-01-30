@@ -12,6 +12,8 @@
 
 html {
     font-size: 12px;
+    margin-left: 6rem;
+    margin-right: 6rem;
 }
 
 body {
@@ -25,17 +27,14 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem 1rem 0.5rem 1rem;
     align-items: center;
-    padding: 1rem 2rem;
     background-color: var(--color-black);
     color: var(--color-white);
     font-size: 1.5rem;
-    font-weight: 500;
     font-family: var(--font-jetbrains);
+
 }
-
-logo {}
-
 
 nav a {
     color: var(--color-white);
@@ -45,6 +44,26 @@ nav a {
 nav a:hover {
     color: var(--color-yellow);
 }
+
+.logo {
+    width: 3.5rem;
+}
+
+.button {
+    background-color: var(--color-yellow);
+    color: var(--color-black);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+}
+
 
 ul {
     display: flex;
@@ -57,6 +76,18 @@ li {
     margin: 0.5rem;
     font-size: 1rem;
 }
+
+/* homepage */
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    height: 100vh;
+    background-color: var(--color-black);
+}
+
+
+
 /* mainname css */
 .mainheading {
     font-family: var(--font-jetbrains);
@@ -88,10 +119,21 @@ li {
 
 .maintext2 {
     font-family: var(--font-jetbrains);
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--color-white);
     margin: 0;
     padding: 0;
     text-transform: uppercase;
 }
+
+.information{
+    font-family: var(--font-jetbrains);
+    color: var(--color-yellow);
+}
+.quality:hover{
+    color: var(--color-yellow);
+}
+
+
+
 
