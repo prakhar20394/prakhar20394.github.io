@@ -23,6 +23,7 @@ body {
     color: var(--color-white);
 }
 
+
 /* CSS for Navigation bar */
 nav {
     display: flex;
@@ -34,7 +35,10 @@ nav {
     font-size: 1.5rem;
     font-family: var(--font-jetbrains);
 
+    z-index: 1;
 }
+
+
 
 nav a {
     color: var(--color-white);
@@ -53,7 +57,36 @@ nav a:hover {
     align-items: center;
 }
 
+.prakhar{
+    width: 12.5rem;
+    border-radius: 0.5rem;
+}
+.mybackground{
+    display: flex;
+    flex-direction: column;
+}
+.aboutme{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.aboutme-text{
+    display: flex;
+    flex-direction: column;
+}
 
+.aboutme-heading{
+    font-family: var(--font-jetbrains);
+    font-size: 2rem;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
 
 .button {
     background-color: var(--color-yellow);
@@ -100,15 +133,18 @@ li {
     font-size: 1rem;
 }
 
-/* homepage */
-.homepage {
+.heropage{
+    /* viewheight to be 100 */
+    height: 100vh;
+    /* bring it to the middle */
     display: flex;
     flex-direction: column;
-    justify-content: left;
-    height: 100vh;
-    background-color: var(--color-black);
-}
+    margin-top: auto;
+    margin-bottom: auto;
+ 
 
+
+}
 /* mainname css */
 .mainheading {
     font-family: var(--font-jetbrains);
@@ -155,6 +191,34 @@ li {
     color: var(--color-yellow);
 }
 
+.hireme-heading{
+    font-family: var(--font-jetbrains);
+    font-size: 2rem;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+.hireme-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    background-color: var(--color-purple);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    width: 50%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border: 0.05rem solid  var(--color-yellow);
+    box-shadow: 0 0 0rem 0.5rem var(--color-purple);
+}
+
+
+
+/* FOOTER */
 /* add 3 children in  footer flex */
 .footer-left {
     display: flex;
