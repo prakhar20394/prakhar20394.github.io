@@ -1,129 +1,97 @@
-
-/* General CSS */
-body{
-    font-family: montserrat;
-    font-size: 12px;
-    background-color: #f2f2f2;
-    display:flex; 
-    flex-direction:column; 
-    justify-content:center;
-    min-height:80vh;
+/* Make color palette */
+:root {
+    --color-black: #202020;
+    --color-white: #FFFFFF;
+    --color-yellow: #F7D046;
+    --color-purple: #5B38E3;
+    --color-grey: #D9D9D9;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+    --font-dm: 'DM Serif Display', serif;
+    --font-bungee: 'Bungee Outline';
 }
 
+html {
+    font-size: 12px;
+}
 
+body {
+    background-color: var(--color-black);
+    font-family: var(--font-jetbrains);
+    line-height: 1.5;
+    color: var(--color-white);
+}
 
-
-/* Header */
-.header{
+/* CSS for Navigation bar */
+nav {
+    display: flex;
     justify-content: space-between;
-    align-content: center;
-    height: auto;
-    width: 100%;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--font-jetbrains);
 }
 
-.logo{
-    width: 32px;
-    padding: 10px;
-    align-items: baseline;
-}
-
-.logo-container{
-    display: inline-block;
-    align-items: baseline;
-}
-
-.menu-container{
-    float: right;
-    align-items: baseline;
-}
-.menu-item{
-    display: inline;
-    padding: 10px 5px 10px 5px;
-    text-decoration: none !important; 
-    color: #000
-}
+logo {}
 
 
-
-/* Body */
-/* Section 1: Main-Text */
-#main-text{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 75vh;
-    justify-content: center;
-}
-
-.button {
+nav a {
+    color: var(--color-white);
     text-decoration: none;
-    background-color: rgb(175, 203, 248);
-    border-radius: 20px;
-    border-style: none;
-    align-items: baseline;
-    font-size: 12px;
-    padding: 8px;
 }
 
-.mainheading{
-    font-size: 26px;
-    text-align: left;
-    margin: 10px;
+nav a:hover {
+    color: var(--color-yellow);
 }
 
-.quality:hover{
-    color: white !important;
-    padding: 3px;
-    border-radius: 5px;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue !important;
-}
-
-.maintext{
-    font-size: 12px;
-    text-align: left;
-    margin: 20px 10px 20px 10px;
-
-}
-
-
-/* Section 2: Recent Works */
-#my-recent-works{
+ul {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    margin: 10px;
+    list-style: none;
+    /* spacing */
+    margin: 1;
 }
 
-
-
-
-
-
-/* Footnote */
-footer{
-    background-color: rgb(175, 203, 248);
-    text-align: center;
-    font-size: 12px;
+li {
+    margin: 0.5rem;
+    font-size: 1rem;
 }
-.navlogo{
-    width: 15px;
-    padding: 1px;
-    align-items: baseline;
-    border-radius: 5px;
+/* mainname css */
+.mainheading {
+    font-family: var(--font-jetbrains);
+    font-size: 2.5rem;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
 }
-.footernote{
-    text-align: center;
-    font-size: 6px;
-    padding: none !important;
+.mainname {
+    font-family: var(--font-dm);
+    font-size: 6rem;
+    font-weight: 500;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    /* set uppercase */
+    text-transform: uppercase;
 }
 
-.copyright{
-    text-align: center;
-    font-size: 5px;
-    padding: none !important;
-    font-style: italic;
+.maintext1 {
+    font-family: var(--font-jetbrains);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
 }
+
+.maintext2 {
+    font-family: var(--font-jetbrains);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
