@@ -7,11 +7,10 @@ var header = document.getElementById("header");
 // Get the offset position of the navbar
 var sticky = header.offsetTop;
 
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
+<form action="https://getform.io/f/980ba2f3-3226-4934-b86b-400f49bd0cb9" method="POST">
+    <input type="email" name="email">
+    <!-- add hidden Honeypot input to prevent spams -->
+    <input type="hidden" name="_gotcha" style="display:none !important">
+    <!-- select field handle -->
+    <button type="submit">Send</button>
+</form>

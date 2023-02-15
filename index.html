@@ -29,11 +29,11 @@
     <div class="navigation-wrapper"> <!-- Navigation bar -->
         <nav class="navbar">
             <!-- Logo -->
-            <div class="logo-container">
-                <a href="Homepage.html">
-                    <img src="images/Logo 2.png" alt="Press for Home page" class="logo">
-                </a>
-            </div>
+            <!-- <div > -->
+            <a href="/" class="logo-container">
+                <img src="images/Logo 2.png" alt="Press for Home page" class="logo">
+            </a>
+            <!-- </div> -->
             <!-- Navigation Links -->
             <div class="menu-container">
                 <!-- Menu -->
@@ -66,7 +66,7 @@
     <!-- Main body text -->
     <div class="heropage">
         <p class="bgtext">Hello</p>
-        <div id="main-text">
+        <div class="main-text">
             <p class="mainheading">
                 <span id="hello">
                     Hello👋 I am</span><br>
@@ -92,10 +92,10 @@
                 <a href="#contactme">
                     <button class="button">Connect</button>
                 </a>
-                <a href="#resume">
+                <a href="/resume.html">
                     <button class="button">Resume</button>
                 </a>
-                <a href="#Share"><img src="images/share.png" class="sharebutton"></a>
+                <a href="#Share" class="shareicon"><img src="images/share.png" class="sharebutton"></a>
             </div>
         </div>
     </div>
@@ -121,21 +121,25 @@
                 <p></p>
             </div>
         </div>
-        <section class="achievement-section">
-            <p class="bglistheading">Achievements</p>
-            <ul class="bglist">
-                <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
-                <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
-                <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
-            </ul>
-        </section>
-        <section class="experience-section">
-            <p class="bglistheading">Experience</p>
-            <ul class="bglist">
-                <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
-                <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
-                <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
-            </ul>
+        <section class="expitems">
+            <section class="bglistheading">
+                <p class="bglistheadingneg">ACHIEVEMENTS</p>
+                <p class="bglistheadingpos">EXPERIENCE</p>
+            </section>
+            <section class="items-section">
+                <ul class="bglist left">
+                    <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
+                    <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
+                    <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
+                </ul>
+            </section>
+            <section class="items-section">
+                <ul class="bglist right">
+                    <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
+                    <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
+                    <li>1st Runner Up at the 2020 Designathon, IIIT Delhi</li>
+                </ul>
+            </section>
         </section>
 </body>
 <!-- Projects -->
@@ -168,8 +172,10 @@
                 something or just fancy saying hello, then get in touch.</p>
         </div>
         <div class="hireme-button">
-            <a href="www.wa.me/+919899326396">
-                <button class="button">Connect</button>
+            <!-- Add a redirect link to website in new tab -->
+
+            <a href="https://wa.me/919899326396?text=I%20came%20across%20your%20website%20and%20wanted%20to%20connect%20with%20you%20regarding...">
+                <button class="connect-button">Connect</button>
             </a>
         </div>
     </div><!-- footer -->
@@ -182,11 +188,14 @@
                     </span>
                     <br>Always down to collaborate and work together. Let's get in touch!
                 </p>
-                <!-- make the text box and button as 2 children of flex board -->
-                <div class="input">
-                    <input type="text" placeholder=" Enter your email" class="email">
-                    <button class="button">Buzz</button>
-                </div>
+                <form action="https://getform.io/f/980ba2f3-3226-4934-b86b-400f49bd0cb9" method="POST">
+                    <div class="input">
+                        <input type="text" placeholder=" Enter your email" name="email"class="email">
+                        <input type="hidden" name="_gotcha" style="display:none !important">
+                        <button class="button" type="submit">Buzz</button>
+                    </div>
+                </form>
+
             </div>
             <!-- <vl class="divider"> -->
             <div class="footer-center">
@@ -233,7 +242,7 @@
                             <a href="Blogs.html" class="link">Blogs</a>
                         </td>
                         <td>
-                            <a href="#Resume" class="link">Resume</a>
+                            <a href="/resume" class="link">Resume</a>
                         </td>
                     </tr>
                     <tr>
