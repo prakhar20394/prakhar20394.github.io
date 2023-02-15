@@ -481,7 +481,23 @@ li {
     color : var(--color-black);
   } */
   
+.pdf
+  {
+    /* stylise stroller */
+    overflow: hidden;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    /* hide scrollbar */
+    -ms-overflow-style: none;
+    page-break-inside: avoid;
 
+
+
+  }
+  .embed{
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
 
   /* Responsive css Code Start */
   

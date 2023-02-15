@@ -6,8 +6,7 @@
             Prakhar Bhargava👋
         </title>
         <!--Defining the style sheet for homepage-->
-        <link
-        rel="stylesheet" href="home.css">
+        <link rel="stylesheet" href="home.css">
         <!--Meta Data-->
         <meta charset="UTF-8">
         <meta name="keywords" content="Design, UX, UI, UX/UI, Designer, Coder, Developer, Prakhar Bhargava, Prakhar, Bhargava">
@@ -24,33 +23,10 @@
     </head>
 
     <body>
-        <div id="adobe-dc-view" style="width: 800px;"></div>
-        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-        <script type="text/javascript">
-            document.addEventListener('adobe_dc_view_sdk.ready', function () {
-                var adobeDCView = new AdobeDC.View({clientId: 'df8746cd16854e6d8adbee09d4f921d6', divId: 'adobe-dc-view'});
-                adobeDCView.previewFile({
-                    content: {
-                        location: {
-                            href: "Prakhar Bhargava Resume Application.pdf"
-                            // api: 'GOOGLE_DRIVE',
-
-                            // url: "https://drive.google.com/file/d/1wV7PnBaigAdt1WNuflFNoXiXOMQzxwKE/view?usp=share_link"
-                        }
-                    },
-                    metaData: {
-                        fileName: 'Prakhar Bhargava Resume Application.pdf'
-                    }
-                },
-                function(error) {
-                    console.log(error);
-                },
-                {
-                    embedMode: 'IN_LINE',
-                    showDownloadPDF: false,
-                    showPrintPDF: false
-                });
-            });
-        </script>
+        <!-- inframe for pdf -->
+        <object data="Application.pdf#toolbar=0&navpanes=0" type="application/pdf" width="100%" height="1000px" class="pdf">
+            <p>Sorry, your browser doesn't support embedded PDF files. You can download the file <a href="my_resume.pdf">here</a>.</p>
+        </object>
+</body>
     </body>
 </html>
