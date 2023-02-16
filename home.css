@@ -203,7 +203,7 @@ nav a:hover {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
-.aboutme-text {
+.general-text {
     display: flex;
     flex-direction: column;
 }
@@ -308,7 +308,7 @@ li {
 }
 .mainname {
     font-family: var(--font-dm);
-    font-size: 6rem;
+    font-size: 6.5rem;
     font-weight: 500;
     color: var(--color-white);
     margin: 0;
@@ -332,20 +332,29 @@ li {
     flex-direction: column;
     justify-content: center;
 }
-.bgtext {
+.bgtext-r {
     font-size: 20rem;
-
     font-family: var(--font-bungee);
     color: var(--color-purple);
-    opacity: 0.6;
+    opacity: 0.2;
     position: absolute;
     vertical-align: middle;
     z-index: -1;
     margin-left: 25%;
 }
+.bgtext-l {
+    font-size: 20rem;
+    font-family: var(--font-bungee);
+    color: var(--color-purple);
+    opacity: 0.2;
+    position: absolute;
+    vertical-align: middle;
+    z-index: -1;
+    margin-right: 25%;
+}
 .maintext1 {
     font-family: var(--font-jetbrains);
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--color-white);
     margin: 0;
     padding: 0;
@@ -719,3 +728,68 @@ video:hover {
 .right {
     padding-right: 1rem;
 }
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    /* align left */
+    justify-content: center;
+    gap: 1rem;
+  }
+
+.card-container {
+    width: 18.75rem;
+    height: 27.5rem;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    margin: auto;
+    box-shadow: 0 2px 20px rgba(0,0,0, 0.1);
+    overflow: hidden;
+}
+
+.card-image {
+    height: 13.75rem;
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-size: cover;
+}
+
+.card-badge {
+    text-transform: uppercase;
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    padding: 0.3rem 1rem;
+    max-width: fit-content;
+    margin:0 0.5rem 0.5rem 0.5rem;
+    border-radius: 1rem;
+    font-size: 0.6rem;
+}
+
+.card-badge-purple {
+    background-color:var(--color-purple);
+  }
+
+.card-heading {
+    font-size: 1.2rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    color: var(--color-black);
+}
+
+.card-description{
+    font-size: 0.8rem;
+    margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+    color: var(--color-black);
+}
+
+@media screen and (max-width: 1000px) {
+    .project-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+
+
+
+
+
