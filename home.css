@@ -194,6 +194,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
 }
+
 .aboutme {
     display: flex;
     flex-direction: row;

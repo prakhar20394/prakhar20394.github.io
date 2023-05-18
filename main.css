@@ -1,0 +1,153 @@
+body {
+    background: black;
+    background-repeat: no-repeat;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    gap: 13.33rem; /* 208px / 16px (base font-size) = 13.33rem */
+    
+    position: absolute;
+    width: 100rem; /* 1296px / 16px (base font-size) = 90rem */
+    height: 4.075rem; /* 65.19px / 16px (base font-size) = 4.075rem */
+    left: calc(50% - 50rem); /* 1296px / 2 / 16px (base font-size) = 45rem */
+    top: 2rem; /* 32px / 16px (base font-size) = 2rem */
+  }
+  
+  .name {
+    font-family: Familjen Grotesk;
+    font-size: 2rem; /* 32px / 16px (base font-size) = 2rem */
+    font-weight: 400;
+    line-height: 2.5rem; /* 40px / 16px (base font-size) = 2.5rem */
+    letter-spacing: 0.1em;
+    text-align: left;
+    text-transform: uppercase;
+    position: relative;
+    color: #F1F1F1;
+  }
+  
+  .logo {
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+  
+  .name::before,
+  .name::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 12.5rem; /* Adjust the width of the lines as needed */
+    height: 1px; /* Adjust the height of the lines as needed */
+    background-color: #F1F1F1; /* Adjust the color of the lines as needed */
+  }
+  
+  .name::before {
+    left: -13rem; /* Adjust the position of the line before the name */
+  }
+  
+  .name::after {
+    right: -13rem; /* Adjust the position of the line after the name */
+  }
+  
+  .hamburger-menu {
+    width: 2.75rem; /* 44px / 16px (base font-size) = 2.75rem */
+    height: 2.75rem; /* 44px / 16px (base font-size) = 2.75rem */
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      width: 90%; /* Adjust the width as needed for mobile devices */
+      left: 5%; /* Adjust the left position as needed for mobile devices */
+      top: 1rem; /* Adjust the top position as needed for mobile devices */
+      gap: 2rem; /* Adjust the gap between elements as needed for mobile devices */
+      flex-wrap: wrap;
+    }
+    
+    .logo,
+    .name {
+      width: 50%; /* Adjust the width as needed for mobile devices */
+      text-align: center;
+    }
+    
+    .hamburger-menu {
+      order: 1;
+    }
+  }
+
+
+  .widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0;
+    gap: 1.375rem; /* 22px / 16px (base font-size) = 1.375rem */
+    
+    position: fixed;
+    right: 1.25rem; /* 20px / 16px (base font-size) = 1.25rem */
+    bottom: 2rem; /* 20px / 16px (base font-size) = 1.25rem */
+    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2); /* 5px / 16px (base font-size) = 0.3125rem */
+    /* align contents vertically */
+    align-items: center;
+
+  }
+  
+  .follow-me {
+    font-family: League Gothic;
+    /* make it a flex */
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5rem; /* 40px / 16px (base font-size) = 2.5rem */
+    font-weight: 400;
+    /* add gap */
+    gap: 1.5rem;
+    white-space: nowrap;
+    letter-spacing: 0;
+    writing-mode: vertical-rl;
+    text-align: left;
+    text-transform: uppercase;
+    color: #F1F1F1;
+    position: relative;
+  }
+  .line{
+    width: 0.3rem; /* 5px / 16px (base font-size) = 0.3125rem */
+    height: 8.8rem; /* 100% of the height of the parent element */
+    background-color: #D9D9D9;
+  }
+  
+  .circle-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem; /* Adjust the gap between images as needed */
+  }
+  
+  .circle-image {
+    width: 3rem; /* 48px / 16px (base font-size) = 3rem */
+    height: 3rem; /* 48px / 16px (base font-size) = 3rem */
+    border-radius: 50%;
+  }
+  
+  .circle2-image {
+    width: 2rem; /* 32px / 16px (base font-size) = 2rem */
+    height: 2rem; /* 32px / 16px (base font-size) = 2rem */
+    border-radius: 50%;
+  }
+  
+  .icon {
+    cursor: pointer;
+  }
+  
+  .cross-rotate {
+    transform: rotate(45deg);
+  }
