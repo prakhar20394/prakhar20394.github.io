@@ -1,28 +1,33 @@
 body {
-    background: black;
+    background: radial-gradient(50% 50% at 50% 50%, #BFAE98 0%, #A9947C 100%);;
     background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
   
+.hidden{
+  display: none;
+}
+  /* NAVIGATION BAR */
   .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0;
-    gap: 13.33rem; /* 208px / 16px (base font-size) = 13.33rem */
-    
     position: absolute;
-    width: 100rem; /* 1296px / 16px (base font-size) = 90rem */
-    height: 4.075rem; /* 65.19px / 16px (base font-size) = 4.075rem */
-    left: calc(50% - 50rem); /* 1296px / 2 / 16px (base font-size) = 45rem */
-    top: 2rem; /* 32px / 16px (base font-size) = 2rem */
+    width: 80%;
+    height: 4.075rem;
+    left: 10%;
+    top: 2rem;
   }
   
   .name {
     font-family: Familjen Grotesk;
-    font-size: 2rem; /* 32px / 16px (base font-size) = 2rem */
+    font-size: 2rem;
     font-weight: 400;
-    line-height: 2.5rem; /* 40px / 16px (base font-size) = 2.5rem */
+    line-height: 2.5rem;
     letter-spacing: 0.1em;
     text-align: left;
     text-transform: uppercase;
@@ -42,40 +47,122 @@ body {
     display: block;
     position: absolute;
     top: 50%;
-    width: 12.5rem; /* Adjust the width of the lines as needed */
-    height: 1px; /* Adjust the height of the lines as needed */
-    background-color: #F1F1F1; /* Adjust the color of the lines as needed */
+    width: 12.5rem;
+    height: 1px; 
+    background-color: #F1F1F1; 
   }
   
   .name::before {
-    left: -13rem; /* Adjust the position of the line before the name */
+    left: -13rem; 
   }
   
   .name::after {
-    right: -13rem; /* Adjust the position of the line after the name */
+    right: -13rem; 
   }
   
   .hamburger-menu {
-    width: 2.75rem; /* 44px / 16px (base font-size) = 2.75rem */
-    height: 2.75rem; /* 44px / 16px (base font-size) = 2.75rem */
-    
+    width: 2.75rem; 
+    height: 2.75rem; 
     flex: none;
     order: 2;
     flex-grow: 0;
   }
+
+
+  /* MENU */
+
+  .menu-navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    width: 80%;
+    height: 4.075rem;
+    left: 10%;
+    top: 2rem;
+  }
+
+  .content{
+    width: 51.625rem; /* 826px / 16px */
+    height: 22.5rem; /* 360px / 16px */
   
+    font-family: 'League Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.75rem; /* 300px / 16px */
+    line-height: 22.5rem; /* 360px / 16px */
+  
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  
+    color: #D9D9D9;
+    font-stretch: 75;
+  
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: -3rem 0; /* -50px / 16px */
+  }
+
+  .menu{
+  position: relative;
+  width: 100%;
+  height: 64rem;
+  background: radial-gradient(50% 50% at 50% 50%, #411E17 0%, #370901 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  padding: 0;
+  }
+
+  .menu-items{
+    margin-left: 10%;
+    margin-top: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+
+    width: 51.625rem;
+    height: 49.375rem;
+    top: 9.5625rem;
+  }
+
+  .content:hover{  
+    font-family: 'League Gothic';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18.75rem; /* 300px / 16px */
+    line-height: 22.5rem; /* 360px / 16px */
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ABA4A4;
+    font-stretch: 75;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: -3rem 0; /* -50px / 16px */
+    
+  }
+
+  /* RESPONSIVENESS */
   @media (max-width: 768px) {
     .navbar {
-      width: 90%; /* Adjust the width as needed for mobile devices */
-      left: 5%; /* Adjust the left position as needed for mobile devices */
-      top: 1rem; /* Adjust the top position as needed for mobile devices */
-      gap: 2rem; /* Adjust the gap between elements as needed for mobile devices */
+      width: 90%; 
+      left: 5%; 
+      top: 1rem; 
+      gap: 2rem;
       flex-wrap: wrap;
     }
     
     .logo,
     .name {
-      width: 50%; /* Adjust the width as needed for mobile devices */
+      width: 50%;
       text-align: center;
     }
     
@@ -84,33 +171,27 @@ body {
     }
   }
 
-
+  /* FOLLOW ME WIDGET */
   .widget {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     padding: 0;
-    gap: 1.375rem; /* 22px / 16px (base font-size) = 1.375rem */
-    
+    gap: 0.5rem;     
     position: fixed;
-    right: 1.25rem; /* 20px / 16px (base font-size) = 1.25rem */
-    bottom: 2rem; /* 20px / 16px (base font-size) = 1.25rem */
-    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2); /* 5px / 16px (base font-size) = 0.3125rem */
-    /* align contents vertically */
+    right: 1.25rem; 
+    bottom: 2rem; 
     align-items: center;
-
   }
   
   .follow-me {
     font-family: League Gothic;
-    /* make it a flex */
     display: flex;
     flex-direction: row;
-    font-size: 2.5rem; /* 40px / 16px (base font-size) = 2.5rem */
-    font-weight: 400;
-    /* add gap */
-    gap: 1.5rem;
+    font-size: 2rem; 
+    font-weight: 350;
+    gap: 0.7rem;
     white-space: nowrap;
     letter-spacing: 0;
     writing-mode: vertical-rl;
@@ -120,8 +201,8 @@ body {
     position: relative;
   }
   .line{
-    width: 0.3rem; /* 5px / 16px (base font-size) = 0.3125rem */
-    height: 8.8rem; /* 100% of the height of the parent element */
+    width: 0.472%;
+    height: 8.8rem;
     background-color: #D9D9D9;
   }
   
@@ -129,19 +210,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem; /* Adjust the gap between images as needed */
+    gap: 0.5rem;
   }
   
   .circle-image {
-    width: 3rem; /* 48px / 16px (base font-size) = 3rem */
-    height: 3rem; /* 48px / 16px (base font-size) = 3rem */
-    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    /* border-radius: 50%; */
   }
   
   .circle2-image {
-    width: 2rem; /* 32px / 16px (base font-size) = 2rem */
-    height: 2rem; /* 32px / 16px (base font-size) = 2rem */
-    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    /* border-radius: 50%; */
   }
   
   .icon {
