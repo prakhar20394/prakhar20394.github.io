@@ -772,6 +772,18 @@ About Page
 	border-radius: 27px;
 	background: rgba(255, 255, 255, 0.43);
 }
+.tertiary-button{
+	text-align: right;
+	padding-top: 16px;
+	font-size: 16px;
+	color: #242424;
+	padding: 16px;
+	margin: 10px;
+	margin-left: 0%;
+	stroke-width: 3px;
+	font-size: 12px;
+	stroke: #242424;
+}
 
 .video-play-btn:hover {
 	color: #fff;
@@ -1333,3 +1345,61 @@ Responsive
 		margin-right: 15px;
 	}
 }
+
+
+  .container{
+	padding: 75px 0;
+	margin: 0 auto;
+	width: 1140px;
+  }
+  
+  .gallery-wrap {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 70vh;
+  }
+  
+  .item {
+	flex: 1;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: none;
+	transition: flex 0.8s ease;
+	
+	&:hover{
+	  flex: 7;
+	}
+  }
+  
+  .item-1 { 
+	background-image: url('https://images.unsplash.com/photo-1499198116522-4a6235013d63?auto=format&fit=crop&w=1233&q=80');
+  }
+  
+  .item-2 { 
+	background-image: url('https://images.unsplash.com/photo-1492760864391-753aaae87234?auto=format&fit=crop&w=1336&q=80');
+  }
+  
+  .item-3 { 
+	background-image: url('https://images.unsplash.com/photo-1503631285924-e1544dce8b28?auto=format&fit=crop&w=1234&q=80');
+  }
+  
+  .item-4 { 
+	background-image: url('https://images.unsplash.com/photo-1510425463958-dcced28da480?auto=format&fit=crop&w=1352&q=80');
+  }
+  
+  .item-5 { 
+	background-image: url('https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1234&q=80');
+  }
+  
+  .social{
+	position: absolute;
+	right: 35px;
+	bottom: 0;
+	
+	img{
+	  display: block;
+	  width: 32px;
+	}
+  }
