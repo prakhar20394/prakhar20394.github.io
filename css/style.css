@@ -539,6 +539,7 @@ body.push-side #ascrail2000-hr {
 
 .header-section {
 	position: absolute;
+	top: 0;
 	width: 100%;
 	top: 0;
 	left: 0;
@@ -550,6 +551,10 @@ body.push-side #ascrail2000-hr {
 	transform: translateX(0);
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
+	display: flex;
+	align-items: middle;
+	justify-content: space-between;
+
 }
 
 .nav-switch {
@@ -598,7 +603,7 @@ body.push-side #ascrail2000-hr {
 }
 
 .main-sidebar .mb-warp {
-	padding: 151px 95px 100px 145px;
+	padding: 135px 95px 100px 145px;
 }
 
 .site-logo {
