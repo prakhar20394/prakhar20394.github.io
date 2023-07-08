@@ -1404,3 +1404,18 @@ Responsive
 	  width: 32px;
 	}
   }
+
+  .blog-link{
+	color: #242424;
+  }
+  .blog-link:hover{
+	  color: #000000;
+  }
+
+.blog-box-styling{
+	padding: 20px;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	stroke: #242424;
+}
