@@ -120,6 +120,62 @@
                         </div>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row" style="margin: 15px;">
+                      <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid rounded">
+                      </a>
+                    </div>
+                    <div class="row" style="margin: 15px;">
+                      <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid rounded">
+                      </a>
+                      <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                        <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid rounded">
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Add the necessary scripts -->
+                  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                  <script src="//cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.4.0/ekko-lightbox.min.js"></script>
+                  <script>
+                    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                      event.preventDefault();
+                      $(this).ekkoLightbox();
+                    });
+                  </script>
+                  
+                  <style>
+                    .row {
+                      display: flex;
+                      flex-wrap: wrap;
+                      margin-right: -15px;
+                      margin-left: -15px;
+                    }
+                  
+                    .col-md-4 {
+                      flex-basis: 0;
+                      flex-grow: 1;
+                      max-width: 33.333333%;
+                      padding-right: 15px;
+                      padding-left: 15px;
+                    }
+                  
+                    .img-fluid {
+                      max-width: 100%;
+                      height: auto;
+                    }
+                  </style>
             </div>
         </div>
         <!-- Main section end -->
