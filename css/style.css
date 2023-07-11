@@ -1393,6 +1393,24 @@ Responsive
   .item-5 { 
 	background-image: url(/img/Gallery/5.jpg);
   }
+
+  .item-6 {
+	background-image: url(/img/Topics/Creator/px1.jpg);
+  }
+
+  .item-7 {
+	background-image: url(/img/Topics/Creator/px2.jpg);
+  }
+  .item-8 {
+	background-image: url(/img/Topics/Creator/px3.jpg);
+  }
+  .item-9 {
+	background-image: url(/img/Topics/Creator/px4.jpg);
+  }
+  .item-10 {
+	background-image: url(/img/Topics/Creator/px5.jpg);
+  }
+
   
   .social{
 	position: absolute;
