@@ -39,12 +39,12 @@
       <div class="close-menu">x</div>
       <!-- Main menu -->
       <ul class="site-menu">
-        <li><a href="../index.html" >Home</a></li>
-        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../portfolio.html">Portfolio Projects</a></li>
         <li><a href="../projects.html"> Other Projects</a></li>
         <li><a href="../blog.html">Blog</a></li>
         <li><a href="../contact.html">Get in Touch!</a></li>
-        <li><a href="../resume.html" >Resume</a></li>
+        <li><a href="../resume.html">Resume</a></li>
       </ul>
       <div class="menu-social">
         <a href="https://www.behance.net/prakharbhargava1" target="_blank">
@@ -58,7 +58,7 @@
         </a>
         <a href="https://www.instagram.com/_evil_o_live_/?hl=en" target="_blank">
           <i class="fa fa-instagram"></i>
-        </a>
+        </a> <a href="https://github.com/prakhar20394" target="_blank"><i class="fa fa-github"></i></a>
       </div>
     </div>
     <header class="header-section">
@@ -75,9 +75,7 @@
         <a href="https://medium.com/@prakharbhargava35" target="_blank">
           <i class="fa fa-medium"></i>
         </a>
-        <a href="https://www.instagram.com/_evil_o_live_/?hl=en" target="_blank">
-          <i class="fa fa-instagram"></i>
-        </a>
+        <a href="https://github.com/prakhar20394" target="_blank"><i class="fa fa-github"></i></a>
         <a href="/resume.html" class="site-btn sb-solid mr-3 mb-3">Resume
           <img src="../img/arrow-righ-2.png" alt></a>
       </div>
@@ -115,7 +113,7 @@
                   complex social problems better and dive deep into the issues from a new perspective. With this unique
                   storytelling approach, we aim to inspire people to take action and be part of a social movement to
                   make this world a better place to live in.</p>
-                <a href="#" class="site-btn sb-dark">Know More <img src="../img/arrow-righ-3.png" alt=""></a>
+                <a href="../portfolio/sehyog.html" class="site-btn sb-dark">Know More <img src="../img/arrow-righ-3.png" alt=""></a>
               </div>
 
             </div>
@@ -132,7 +130,6 @@
                   professional video that
                   generates excitement and buzz, effectively showcasing the product's value and potential.
                 </p>
-                <a href="#" class="site-btn sb-dark">Know More <img src="../img/arrow-righ-3.png" alt=""></a>
               </div>
               <div style="flex: 1; min-width: 300px;">
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/3tzsyAUTTrA"
@@ -157,9 +154,10 @@
                   users more control over the presentation. By allowing users to navigate the content at their own pace,
                   collect food items (just like a swiggy rider) and explore different pathways to see the presentation
                   screens, this approach enabled users to dive deep
-                  into the ideas and concepts being presented, fostering a deeper understanding and connection and ensured that users have a personalized and impactful
+                  into the ideas and concepts being presented, fostering a deeper understanding and connection and
+                  ensured that users have a personalized and impactful
                   learning journey.n.</p>
-                <a href="#" class="site-btn sb-dark">Know More <img src="../img/arrow-righ-3.png" alt=""></a>
+                <a href="#" class="site-btn sb-dark">Play Game <img src="../img/arrow-righ-3.png" alt=""></a>
               </div>
             </div>
 
@@ -173,62 +171,101 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row" style="margin: 15px;">
-          <a href="../img/Topics/Storyteller/Cycle - Delhi Darshan.jpg" data-toggle="lightbox" data-gallery="gallery"
-            class="col-md-4">
-            <img src="../img/Topics/Storyteller/Cycle - Delhi Darshan.jpg" class="img-fluid rounded">
-          </a>
-          <a href="../img/Topics/Storyteller/Tree.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-            <img src="../img/Topics/Storyteller/Tree.jpg" class="img-fluid rounded">
-          </a>
-          <a href="../img/Topics/Storyteller/GDMC.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-            <img src="../img/Topics/Storyteller/GDMC.jpg" class="img-fluid rounded">
-          </a>
-        </div>
-        <div class="row" style="margin: 15px;">
-          <a href="../img/Topics/Storyteller/Qawalli.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-            <img src="../img/Topics/Storyteller/Qawalli.jpg" class="img-fluid rounded">
-          </a>
-          <a href="../img/Topics/Storyteller/GDMC.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-            <img src="../img/Topics/Storyteller/GDMC.jpg" class="img-fluid rounded">
-          </a>
-          <a href="../img/Topics/Storyteller/GDMC.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-            <img src="../img/Topics/Storyteller/GDMC.jpg" class="img-fluid rounded">
-          </a>
-        </div>
-      </div>
-
       <style>
+        .container {
+          max-width: 100%;
+          padding: 15px;
+        }
+
         .row {
-          display: flex;
-          flex-wrap: wrap;
-          margin-right: -15px;
-          margin-left: -15px;
+          margin: 15px -15px;
         }
 
         .col-md-4 {
-          flex-basis: 0;
-          flex-grow: 1;
-          max-width: 33.333333%;
-          padding-right: 15px;
-          padding-left: 15px;
+          padding: 15px;
         }
 
-        .img-fluid {
-          max-width: 100%;
-          height: auto;
+        .img-container {
+          position: relative;
+          overflow: hidden;
+          padding-bottom: 100%;
+        }
+
+        .img-container img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       </style>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="img-container">
+              <a href="../img/Topics/Storyteller/Cycle - Delhi Darshan.jpg" data-toggle="lightbox"
+                data-gallery="gallery">
+                <img src="../img/Topics/Storyteller/Cycle - Delhi Darshan.jpg" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-container">
+              <a href="../img/Topics/Storyteller/Tree.jpg" data-toggle="lightbox" data-gallery="gallery">
+                <img src="../img/Topics/Storyteller/Tree.jpg" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-container">
+              <a href="../img/Topics/Storyteller/GDMC.jpg" data-toggle="lightbox" data-gallery="gallery">
+                <img src="../img/Topics/Storyteller/GDMC.jpg" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="img-container">
+              <a href="../img/Topics/Storyteller/Qawalli.jpg" data-toggle="lightbox" data-gallery="gallery">
+                <img src="../img/Topics/Storyteller/Qawalli.jpg" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-container">
+              <a href="../img/Topics/Storyteller/ship.jpg" data-toggle="lightbox" data-gallery="gallery">
+                <img src="../img/Topics/Storyteller/ship.jpg" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="img-container">
+              <a href="../img/Topics/Storyteller/enac_meet.jpg" data-toggle="lightbox" data-gallery="gallery">
+                <img src="../img/Topics/Storyteller/enac_meet.jpg" class="img-fluid rounded">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <footer>
       <!-- divide the container in 5 column with links: Innovator, Storyteller, etc -->
-      <div class="site-menu" style="height: min-content; background-color: black; justify-content: flex-end; padding: 50px; display: flex; justify-content: flex-end; gap: 50px;" >
-          <li><a href="innovator.html"  style="color: white; font-size: 16px;"> Innovator  <img src="img/arrow-righ-2.png" alt=""></a> </li>
-          <li><a href="storyteller.html" class="active" style="color: white; font-size: 16px;" > Storyteller <img src="img/arrow-righ-2.png" alt=""> </a></li>
-          <li><a href="problem-solver.html" style="color: white; font-size: 16px;"> Problem Solver <img src="img/arrow-righ-2.png" alt=""> </a></li>
-          <li><a href="researcher.html"   style="color: white; font-size: 16px;"> Researcher <img src="img/arrow-righ-2.png" alt=""> </a></li>
-          <li><a href="creator.html"   style="color: white; font-size: 16px;">Creator<img src="img/arrow-righ-2.png" alt=""> </a></li>
+      <div class="site-menu"
+        style="height: min-content; background-color: black; justify-content: flex-end; padding: 50px; display: flex; justify-content: flex-end; gap: 50px;">
+        <li><a href="innovator.html" style="color: white; font-size: 16px;"> Innovator <img src="img/arrow-righ-2.png"
+              alt=""></a> </li>
+        <li><a href="storyteller.html" class="active" style="color: white; font-size: 16px;"> Storyteller <img
+              src="img/arrow-righ-2.png" alt=""> </a></li>
+        <li><a href="problem-solver.html" style="color: white; font-size: 16px;"> Problem Solver <img
+              src="img/arrow-righ-2.png" alt=""> </a></li>
+        <li><a href="researcher.html" style="color: white; font-size: 16px;"> Researcher <img src="img/arrow-righ-2.png"
+              alt=""> </a></li>
+        <li><a href="creator.html" style="color: white; font-size: 16px;">Creator<img src="img/arrow-righ-2.png" alt="">
+          </a></li>
       </div>
     </footer>
   </div>

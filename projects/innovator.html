@@ -40,7 +40,7 @@
         <!-- Main menu -->
         <ul class="site-menu">
           <li><a href="../index.html" >Home</a></li>
-          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="../portfolio.html">Portfolio Projects</a></li>
           <li><a href="../projects.html"> Other Projects</a></li>
           <li><a href="../blog.html">Blog</a></li>
           <li><a href="../contact.html">Get in Touch!</a></li>
@@ -58,7 +58,7 @@
           </a>
           <a href="https://www.instagram.com/_evil_o_live_/?hl=en" target="_blank">
             <i class="fa fa-instagram"></i>
-          </a>
+          </a> <a href="https://github.com/prakhar20394" target="_blank"><i class="fa fa-github"></i></a>
         </div>
       </div>
       <header class="header-section">
@@ -75,9 +75,7 @@
           <a href="https://medium.com/@prakharbhargava35" target="_blank">
             <i class="fa fa-medium"></i>
           </a>
-          <a href="https://www.instagram.com/_evil_o_live_/?hl=en" target="_blank">
-            <i class="fa fa-instagram"></i>
-          </a>
+          <a href="https://github.com/prakhar20394" target="_blank"><i class="fa fa-github"></i></a>
           <a href="/resume.html" class="site-btn sb-solid mr-3 mb-3">Resume
             <img src="img/arrow-righ-2.png" alt=""></a>
         </div>
@@ -167,58 +165,85 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="row" style="margin: 15px;">
-            <a href="../img/Topics/Innovator/Award-ceremony.jpg" data-toggle="lightbox" data-gallery="gallery"
-              class="col-md-4" style="aspect-ratio: 16/9;">
-              <img src="../img/Topics/Innovator/Award-ceremony.jpg" class="img-fluid rounded" style="aspect-ratio: 16/9;">
-            </a>
-            <a href="../img/Topics/Innovator/happy-meal-planning.jpg" data-toggle="lightbox" data-gallery="gallery"
-              class="col-md-4" style="aspect-ratio: 16/9;">
-              <img src="../img/Topics/Innovator/happy-meal-planning.jpg" class="img-fluid rounded" style="aspect-ratio: 16/9;">
-            </a>
-            <a href="../img/Topics/Innovator/jamghat-meeting.jpg" data-toggle="lightbox" data-gallery="gallery"
-              class="col-md-4" style="aspect-ratio: 16/9;">
-              <img src="../img/Topics/Innovator/jamghat-meeting.jpg" class="img-fluid rounded" style="aspect-ratio: 16/9;">
-            </a>
-          </div>
-          <div class="row" style="margin: 15px;">
-            <a href="../img/Topics/Innovator/pizza.jpg" data-toggle="lightbox" data-gallery="gallery"
-              class="col-md-4" style="aspect-ratio: 16/9;">
-              <img src="../img/Topics/Innovator/pizza.jpg" class="img-fluid rounded" style="aspect-ratio: 16/9;">
-            </a>
-            <a href="../img/Topics/Innovator/tbd ar playground.jpeg" data-toggle="lightbox" data-gallery="gallery"
-              class="col-md-4" style="aspect-ratio: 16/9;">
-              <img src="../img/Topics/Innovator/tbd ar playground.jpeg" class="img-fluid rounded" style="aspect-ratio: 16/9;">
-            </a>
-            <a href="../img/Topics/Innovator/ddc-poster.jpg" data-toggle="lightbox" data-gallery="gallery"
-              class="col-md-4" style="aspect-ratio: 16/9;">
-              <img src="../img/Topics/Innovator/ddc-poster.jpg" class="img-fluid rounded" style="aspect-ratio: 16/9;">
-            </a>
-          </div>
-        </div>
         <style>
-          .row {
-            display: flex;
-            flex-wrap: wrap;
-            margin-right: -15px;
-            margin-left: -15px;
-          }
-
-          .col-md-4 {
-            flex-basis: 0;
-            flex-grow: 1;
-            max-width: 33.333333%;
-            padding-right: 15px;
-            padding-left: 15px;
-          }
-
-          .img-fluid {
+          .container {
             max-width: 100%;
-            height: auto;
+            padding: 15px;
           }
-        </style>
-      </div>
+          
+          .row {
+            margin: 15px -15px;
+          }
+          
+          .col-md-4 {
+            padding: 15px;
+          }
+          
+          .img-container {
+            position: relative;
+            overflow: hidden;
+            padding-bottom: 100%;
+          }
+          
+          .img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          </style>
+          
+          <div class="container">
+            <div class="row" style="margin: 15px;">
+              <div class="col-md-4" style="padding: 15px;">
+                <div class="img-container">
+                  <a href="../img/Topics/Innovator/Award-ceremony.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="../img/Topics/Innovator/Award-ceremony.jpg" class="img-fluid rounded">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4" style="padding: 15px;">
+                <div class="img-container">
+                  <a href="../img/Topics/Innovator/happy-meal-planning.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="../img/Topics/Innovator/happy-meal-planning.jpg" class="img-fluid rounded">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4" style="padding: 15px;">
+                <div class="img-container">
+                  <a href="../img/Topics/Innovator/jamghat-meeting.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="../img/Topics/Innovator/jamghat-meeting.jpg" class="img-fluid rounded">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="margin: 15px;">
+              <div class="col-md-4" style="padding: 15px;">
+                <div class="img-container">
+                  <a href="../img/Topics/Innovator/pizza.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="../img/Topics/Innovator/pizza.jpg" class="img-fluid rounded">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4" style="padding: 15px;">
+                <div class="img-container">
+                  <a href="../img/Topics/Innovator/tbd ar playground.jpeg" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="../img/Topics/Innovator/tbd ar playground.jpeg" class="img-fluid rounded">
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4" style="padding: 15px;">
+                <div class="img-container">
+                  <a href="../img/Topics/Innovator/ddc-poster.jpg" data-toggle="lightbox" data-gallery="gallery">
+                    <img src="../img/Topics/Innovator/ddc-poster.jpg" class="img-fluid rounded">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
       <footer>
         <!-- divide the container in 5 column with links: Innovator, Storyteller, etc -->
         <div class="site-menu" style="height: min-content; background-color: black; justify-content: flex-end; padding: 50px; display: flex; justify-content: flex-end; gap: 50px;" >
