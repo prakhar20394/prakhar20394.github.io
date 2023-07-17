@@ -512,6 +512,10 @@ body.push-side #ascrail2000-hr {
 	position: relative;
 }
 
+footer > .site-menu > li > a {
+	margin-bottom: 0;
+}
+
 .site-menu li a:after {
 	position: absolute;
 	content: "";
@@ -1493,5 +1497,24 @@ Responsive
 	background-color: #000000;
 	background-size: 100%;
 	border-top: #FFFFFF solid 2px;
+}
+
+footer {
+	background: #242424;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer > .site-menu {
+	list-style: none;
+	padding: 120px 185px;
+	max-width: 1000px;
+	height: min-content;
+	justify-content: flex-end;
+	padding: 50px;
+	display: flex;
+	justify-content: space-between;
+	gap: 50px;
 }
 	
