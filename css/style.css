@@ -167,6 +167,12 @@ Commom elements
 	border-color: #242424;
 }
 
+.site-btn.disabled {
+	pointer-events: none;
+	cursor: not-allowed !important;
+	border-color: #989;
+}
+
 /* Preloder */
 
 #preloder {
