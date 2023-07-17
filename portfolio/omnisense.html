@@ -97,13 +97,22 @@
         </header>
         <div>
             <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 129.4118%;">
-                <!-- Code for Omnisense game -->
+                <div class="webgl-content">
+                    <div id="unityContainer" style="width: 1280px; height: 720px"></div>
+                    <div class="footer">
+                      <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                      <div class="title">TBD Miniproject</div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
     <!-- Main section end -->
 
     <!--====== Javascripts & Jquery ======-->
+    <script> 
+    var unityInstance = UnityLoader.instantiate("unityContainer", "Build/build.json", {onProgress: UnityProgress});
+    </script>
     <script src="../js/jquery-3.2.1.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/owl.carousel.min.js"></script>
@@ -111,6 +120,7 @@
     <script src="../js/circle-progress.min.js"></script>
     <script src="../js/jquery.magnific-popup.min.js"></script>
     <script src="../js/main.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 
 </body>
 
