@@ -993,6 +993,10 @@ Portfolio page
 	height: 100%;
 }
 
+.portfolio-section > .row {
+	margin-bottom: 100px;
+}
+
 .portfolio-item {
 	position: relative;
 	padding: 0 3px;
