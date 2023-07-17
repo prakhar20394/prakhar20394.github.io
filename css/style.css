@@ -167,6 +167,12 @@ Commom elements
 	border-color: #242424;
 }
 
+.site-btn.disabled {
+	pointer-events: none;
+	cursor: not-allowed !important;
+	border-color: #989;
+}
+
 /* Preloder */
 
 #preloder {
@@ -475,6 +481,8 @@ body.push-side #ascrail2000-hr {
 	z-index: 9999;
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
+	display: flex;
+	flex-direction: column;
 }
 
 .close-menu {
@@ -488,7 +496,7 @@ body.push-side #ascrail2000-hr {
 .site-menu {
 	list-style: none;
 	padding-left: 185px;
-	padding-top: 160px;
+	padding-top: 120px;
 }
 
 .site-menu li {
@@ -502,6 +510,10 @@ body.push-side #ascrail2000-hr {
 	padding-bottom: 5px;
 	margin-bottom: 20px;
 	position: relative;
+}
+
+footer > .site-menu > li > a {
+	margin-bottom: 0;
 }
 
 .site-menu li a:after {
@@ -566,10 +578,16 @@ body.push-side #ascrail2000-hr {
 	opacity: 1;
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
+	display: flex;
+	justify-content: center;
 }
 
 .header-social {
 	float: right;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 1.5rem;
 }
 
 .header-social a {
@@ -578,6 +596,7 @@ body.push-side #ascrail2000-hr {
 	font-size: 18px;
 	margin-right: 30px;
 	padding: 5px;
+	margin-bottom: 0 !important;
 }
 
 .site-content-warp {
@@ -593,6 +612,10 @@ body.push-side #ascrail2000-hr {
 
 /* Left Side section */
 
+#name-heading {
+	white-space: nowrap;
+}
+
 .main-sidebar {
 	position: absolute;
 	width: 614px;
@@ -603,12 +626,12 @@ body.push-side #ascrail2000-hr {
 }
 
 .main-sidebar .mb-warp {
-	padding: 135px 95px 100px 145px;
+	padding: 135px 35px 100px 145px;
 }
 
 .site-logo {
 	display: block;
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 }
 
 .site-logo h2 {
@@ -630,6 +653,10 @@ body.push-side #ascrail2000-hr {
 
 .about-info {
 	margin-bottom: 80px;
+}
+
+.about-info > h5 {
+	margin-bottom: 20px;
 }
 
 .about-info h2 {
@@ -742,6 +769,12 @@ Other pages
 About Page
  ---------------------*/
 
+.about-page {
+	display: flex;
+	align-items: center;
+	margin-left: 25px;
+}
+
 .about-section {
 	height: 100%;
 	padding-right: 74px;
@@ -824,7 +857,18 @@ Blog page
  ---------------------*/
 
 .blog-page {
-	padding-right: 70px;
+	/* padding-right: 70px; */
+}
+
+.main-sidebar > .blog-page {
+	margin-top: 105px; /* Top navigation bar is 105px */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-sidebar > .blog-page > .section-title{
+	margin-bottom: 1.5rem;
 }
 
 .blog-posts {
@@ -832,7 +876,7 @@ Blog page
 }
 
 .blog-post-item {
-	margin-bottom: 20px;
+	margin: 0 50px;
 }
 
 .blog-post-item:last-child {
@@ -965,10 +1009,18 @@ Blog page
 Portfolio page
  ---------------------*/
 
+iframe {
+	margin-top: 60px;
+}
+
 .portfolio-section {
 	padding-right: 30px;
 	margin-left: -3px;
 	height: 100%;
+}
+
+.portfolio-section > .row {
+	margin-bottom: 100px;
 }
 
 .portfolio-item {
@@ -1069,7 +1121,8 @@ Responsive
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
 	.main-sidebar,
 	.copyright {
-		width: 450px;
+		min-width: 450px;
+		max-width: 500px;
 	}
 	.copyright {
 		padding-left: 30px;
@@ -1098,7 +1151,8 @@ Responsive
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.main-sidebar,
 	.copyright {
-		width: 350px;
+		min-width: 350px;
+		max-width: 400px;
 	}
 	.copyright {
 		padding-left: 30px;
@@ -1450,5 +1504,24 @@ Responsive
 	background-color: #000000;
 	background-size: 100%;
 	border-top: #FFFFFF solid 2px;
+}
+
+footer {
+	background: #242424;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer > .site-menu {
+	list-style: none;
+	padding: 120px 185px;
+	max-width: 1000px;
+	height: min-content;
+	justify-content: flex-end;
+	padding: 50px;
+	display: flex;
+	justify-content: space-between;
+	gap: 50px;
 }
 	
