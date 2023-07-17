@@ -475,6 +475,8 @@ body.push-side #ascrail2000-hr {
 	z-index: 9999;
 	-webkit-transition: all 0.4s;
 	transition: all 0.4s;
+	display: flex;
+	flex-direction: column;
 }
 
 .close-menu {
