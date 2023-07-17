@@ -846,7 +846,18 @@ Blog page
  ---------------------*/
 
 .blog-page {
-	padding-right: 70px;
+	/* padding-right: 70px; */
+}
+
+.main-sidebar > .blog-page {
+	margin-top: 105px; /* Top navigation bar is 105px */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main-sidebar > .blog-page > .section-title{
+	margin-bottom: 1.5rem;
 }
 
 .blog-posts {
@@ -854,7 +865,7 @@ Blog page
 }
 
 .blog-post-item {
-	margin-bottom: 20px;
+	margin: 0 50px;
 }
 
 .blog-post-item:last-child {
