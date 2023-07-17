@@ -601,6 +601,10 @@ body.push-side #ascrail2000-hr {
 
 /* Left Side section */
 
+#name-heading {
+	white-space: nowrap;
+}
+
 .main-sidebar {
 	position: absolute;
 	width: 614px;
@@ -1077,7 +1081,8 @@ Responsive
 @media only screen and (min-width: 1200px) and (max-width: 1400px) {
 	.main-sidebar,
 	.copyright {
-		width: 450px;
+		min-width: 450px;
+		max-width: 500px;
 	}
 	.copyright {
 		padding-left: 30px;
@@ -1106,7 +1111,8 @@ Responsive
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 	.main-sidebar,
 	.copyright {
-		width: 350px;
+		min-width: 350px;
+		max-width: 400px;
 	}
 	.copyright {
 		padding-left: 30px;
