@@ -620,7 +620,7 @@ body.push-side #ascrail2000-hr {
 
 .site-logo {
 	display: block;
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 }
 
 .site-logo h2 {
@@ -642,6 +642,10 @@ body.push-side #ascrail2000-hr {
 
 .about-info {
 	margin-bottom: 80px;
+}
+
+.about-info > h5 {
+	margin-bottom: 20px;
 }
 
 .about-info h2 {
