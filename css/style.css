@@ -550,7 +550,7 @@ footer > .site-menu > li > a {
 /* Header section */
 
 .header-section {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	top: 0;
@@ -566,7 +566,6 @@ footer > .site-menu > li > a {
 	display: flex;
 	align-items: middle;
 	justify-content: space-between;
-
 }
 
 .nav-switch {
