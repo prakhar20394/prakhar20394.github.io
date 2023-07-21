@@ -656,6 +656,7 @@ footer > .site-menu > li > a {
 
 .about-info > h5 {
 	margin-bottom: 20px;
+	max-width: 450px;
 }
 
 .about-info h2 {
@@ -1560,9 +1561,10 @@ footer > .site-menu {
 .first-view-text{
 	position: absolute;
 	top: 50%;
-	left: 40%;
+	left: 30%;
 	transform: translate(-50%, -50%);
 	text-align: left;
+	z-index: 1;
 }
 
 .first-view-img{
