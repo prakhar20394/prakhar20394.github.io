@@ -152,7 +152,7 @@ class Scene {
     this.initScene();
     this.initCamera();
     this.initRenderer();
-    // this.initControls();
+    this.initControls();
     this.initLights();
   }
 }
