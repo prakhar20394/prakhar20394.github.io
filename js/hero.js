@@ -109,9 +109,11 @@ class Scene {
     // controls.minPolarAngle = -Math.PI*.45;
     // controls.maxPolarAngle = Math.PI*.45;
     this.controls.minDistance = 10;
-    this.controls.maxDistance = 10000;
-    this.controls.autoRotate = true;
-    this.controls.autoRotateSpeed = -3;
+    this.controls.maxDistance = 40;
+    // this.controls.autoRotate = true;
+    // this.controls.autoRotateSpeed = -3;
+    this.controls.enableZoom = false;
+    this.controls.noZoom = true;
   }
   initRenderer(){
     let pixelRatio = window.devicePixelRatio
