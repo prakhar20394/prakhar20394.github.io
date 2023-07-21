@@ -1420,10 +1420,10 @@ Responsive
 	background-size: cover;
 	background-repeat: none;
 	transition: flex 0.8s ease;
-	
-	&:hover{
-	  flex: 7;
-	}
+  }
+
+  .item:hover {
+	flex: 7;
   }
   
   .item-1 { 
