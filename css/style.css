@@ -1578,3 +1578,19 @@ footer > .site-menu {
 	text-align: left;
 }
 
+
+#unityContainer {
+	width: 100% !important;
+	height: 100% !important;
+	margin-right: 2.4rem;
+}
+
+#unityContainer, .webgl-content, #omnisense-game {
+	max-height: 540px;
+	max-width: 900px !important;
+	aspect-ratio: 16/12;
+}
+
+#omnisense-game {
+	flex: 1.4;
+}
