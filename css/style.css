@@ -1562,35 +1562,66 @@ footer > .site-menu {
 
 /* Hero page cover */
 
-.first-view{
-	/* background-color: #FFFFFF; */
-	/* background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%); */
-	background: rgb(255,255,255);
-	background: linear-gradient(180deg, #5D9FFF 0%, #6BBBFF 35%, rgba(255,255,255,1) 100%);
+.first-view {
+	background: rgb(255, 255, 255);
+	background: linear-gradient(180deg, #5D9FFF 0%, #6BBBFF 35%, rgba(255, 255, 255, 1) 100%);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 100vh;
 	width: 100vw;
-
-}
-
-.first-view-text{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .first-view-text {
 	position: absolute;
 	top: 50%;
-	left: 30%;
+	left: 50%;
 	transform: translate(-50%, -50%);
 	text-align: left;
 	z-index: 1;
-}
-
-.first-view-img{
+  }
+  
+  .first-view-img {
 	position: absolute;
 	top: 50%;
-	left: 60%;
+	left: 50%;
 	transform: translate(-50%, -50%);
-	text-align: left;
-}
+	text-align: center;
+  }
+  
+  /* Styles for screens with a width up to 767px (typically mobile devices) */
+  @media (max-width: 767px) {
+	.first-view-text {
+		padding-top: 120px;
+		padding-left: 20px;
+		padding-right: 20px;
+		position: static;
+	  	transform: none;
+	  	text-align: center;
+	}
+	.first-view-img {
+	  position: static;
+	  transform: none;
+	  text-align: center;
+	  opacity: 0.2;
+	}
+  }
+  
+  /* Styles for screens with a width greater than 767px (larger devices) */
+  @media (min-width: 768px) {
+	.first-view-text {
+	  left: 30%;
+	}
+  
+	.first-view-img {
+	  left: 60%;
+	}
+  }
+  
 
 /* Omnisense game settings */
 
