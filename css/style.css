@@ -1560,8 +1560,13 @@ footer > .site-menu {
 	overflow-y: auto;
 }
 
+/* Hero page cover */
+
 .first-view{
-	background-color: #FFFFFF;
+	/* background-color: #FFFFFF; */
+	/* background: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%); */
+	background: rgb(255,255,255);
+	background: linear-gradient(180deg, #5D9FFF 0%, #6BBBFF 35%, rgba(255,255,255,1) 100%);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1587,6 +1592,7 @@ footer > .site-menu {
 	text-align: left;
 }
 
+/* Omnisense game settings */
 
 #unityContainer {
 	width: 100% !important;
