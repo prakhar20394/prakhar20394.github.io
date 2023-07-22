@@ -877,10 +877,18 @@ Blog page
 .blog-posts {
 	height: 100%;
 }
-
-.blog-post-item {
+  
+  /* For screens with a width greater than 767px (larger devices) */
+  /* You can keep the original margin of 0 50px if desired */
+  .blog-post-item {
 	margin: 0 50px;
-}
+  }
+
+  @media (max-width: 767px) {
+	.blog-post-item {
+	  margin: 0 15px;
+	}
+  }
 
 .blog-post-item:last-child {
 	margin-bottom: 80px;
@@ -1293,7 +1301,8 @@ Responsive
 	}
 	.main-sidebar .mb-warp {
 		padding: 100px 15px;
-		padding-left: 50px;
+		padding-left: 15px;
+		padding-right: 15px;
 		max-width: 420px;
 		margin: 0 auto;
 	}
