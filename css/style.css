@@ -1594,3 +1594,23 @@ footer > .site-menu {
 #omnisense-game {
 	flex: 1.4;
 }
+
+
+/* scrollbar stylign using webkit */
+::-webkit-scrollbar {
+    width: 5px;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(238, 238, 238);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgb(36, 36, 36); 
+}
