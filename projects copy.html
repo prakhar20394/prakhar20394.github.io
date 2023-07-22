@@ -25,6 +25,10 @@
     <!-- Main Stylesheets -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-oBzDl4fCg7pZ0Xf8F8wDfjQsM0fAqDxEL4k+5tOPytA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-b7Pqcv0Okg6j5cKDMoUv8Tad7zqNcSfIqB+YhxP+qzYTVfmv56HD7cdwELDquHVK" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-fW7sZOGWVAXp8p1vUxj2IHVdA4kgiPZKNrE03i1bua3iu7x2j2VXvrYyu6kPEf1g" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9zWlP+EhODPx3L2MSQ6zZ3oGp7lPeG3qP1ah8HtASo0wGchZGc2IS3yfi5L0p1J" crossorigin="anonymous">
 </head>
 
 <body>
@@ -78,17 +82,18 @@
                     <div class="about-info">
                         <h2>I am a...</h2>
                         <h5>A Designer needs to do a lot more than making pages pretty...</h5>
-                        <p>A Designer needs to wear different hats. 🎩 
+                        <p>A Designer needs to wear different hats. 🎩
                             I'm an problem-solving innovator, constantly seeking new challenges. With a researcher's
                             mindset, I delve deep into problems, uncovering their essence to create user-centric
-                            solutions. Creative storytelling and narratives excite me, and I love to create compelling stories. 
+                            solutions. Creative storytelling and narratives excite me, and I love to create compelling
+                            stories.
                         </p>
 
                         <p>I'm a designer on a quest to find my perfect set of hats, constantly exploring and
                             experimenting to uncover my unique creative identity :)</p>
                     </div>
-                    <a href="./blog.html" class="site-btn sb-solid mr-3 mb-3">Skip to blogs<img src="img/arrow-righ-2.png"
-                            alt=""></a>
+                    <a href="./blog.html" class="site-btn sb-solid mr-3 mb-3">Skip to blogs<img
+                            src="img/arrow-righ-2.png" alt=""></a>
                 </div>
             </div>
             <!-- Left Side section end -->
@@ -97,69 +102,48 @@
                 <div class="hero-section">
                     <div class="hero-scroll">
                         <div class="hero-track">
-                            <!-- make the items clickable -->
-                            <div onclick="location.href='./projects/researcher.html';" style="cursor: pointer;"
-                                class="hs-item set-bg" data-setbg="img/hero/researcher.png"> <a href="#">
-                                    <div class="hs-info">
-                                        <h5>Researcher</h5>
-                                        <p>Uncovering knowledge through relentless curiosity</p>
-                                        <img src="img/arrow-righ-3.png" alt="">
-                                    </div>
-                                </a> </div>
-                            <div onclick="location.href='./projects/creator.html';" style="cursor: pointer;"
-                                class="hs-item set-bg" data-setbg="img/hero/creator.png"> <a href="#">
-                                    <div class="hs-info">
-                                        <h5>Creator</h5>
-                                        <p>Loves to create and cultivate new ideas</p>
-                                        <img src="img/arrow-righ-3.png" alt="">
-                                    </div>
-                                </a> </div>
-                            <div onclick="location.href='./projects/storyteller.html';" style="cursor: pointer;"
-                                class="hs-item set-bg" data-setbg="img/hero/storyteller.png"> <a href="#">
-                                    <div class="hs-info">
-                                        <h5>Storyteller</h5>
-                                        <p>Weaving tales that captivates and inspires</p>
-                                        <img src="img/arrow-righ-3.png" alt="">
-                                    </div>
-                                </a> </div>
-                            <div onclick="location.href='./projects/problem-solver.html';" style="cursor: pointer;"
-                                class="hs-item set-bg" data-setbg="img/hero/ProblemSolver.png"> <a href="#">
-                                    <div class="hs-info">
-                                        <h5>Problem Solver</h5>
-                                        <p>Unraveling challenges with innovative solutions</p>
-                                        <img src="img/arrow-righ-3.png" alt="">
-                                    </div>
-                                </a> </div>
-                            <div onclick="location.href='./projects/innovator.html';" style="cursor: pointer;"
-                                class="hs-item set-bg" data-setbg="img/hero/innovator.png">
-                                <div class="hs-info">
-                                    <h5>Innovator</h5>
-                                    <p> Pioneering change with daring ideas worth executing </p>
-                                    <img src="img/arrow-righ-3.png" alt="">
-                                </div>
-                            </div>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                                data-mdb-target="#exampleModal">
+                                Launch demo modal
+                            </button>
 
-                            <!-- <div onclick="openModal()" style="cursor: pointer;" class="hs-item set-bg" data-setbg="img/hero/innovator.png">
-                                <div class="hs-info">
-                                    <h5>Innovator</h5>
-                                    <p>Pioneering change with daring ideas worth executing</p>
-                                    <img src="img/arrow-righ-3.png" alt="">
-                                </div>
-                            </div>
-                            
-                            <div id="myModal" class="modal" onclick="closeModal(event)">
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalLabel" tabindex="-1">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">Innovator</h5>
-                                            <button type="button" class="close" data-dismiss="modal" onclick="closeModal(event)">&times;</button>
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal 1</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <iframe src="./projects/innovator.html" width="100%" height="100%"></iframe>
+                                            Show a second modal and hide this one with the button below.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" data-bs-target="#exampleModal2" data-bs-toggle="modal" data-bs-dismiss="modal">Open second modal</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
+                            
+                            <!-- Second Modal -->
+                            <div class="modal fade" id="exampleModal2" aria-hidden="true" aria-labelledby="exampleModalLabel2" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel2">Modal 2</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Hide this modal and show the first with the button below.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary" data-bs-target="#exampleModal" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                              <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a>
                         </div>
                     </div>
                 </div>
@@ -177,20 +161,14 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/main.js"></script>
     <script defer src="/_vercel/insights/script.js"></script>
-    <script>
-        function openModal() {
-        document.getElementById("myModal").style.display = "block";
-        document.body.classList.add("modal-open");
-    }
+    <!-- Your modal and button elements here -->
 
-    function closeModal(event) {
-        if (event.target === document.getElementById("myModal")) {
-            document.getElementById("myModal").style.display = "none";
-            document.body.classList.remove("modal-open");
-        }
-    }
-    </script>
-    
+<!-- Add Bootstrap JavaScript and jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-oBzDl4fCg7pZ0Xf8F8wDfjQsM0fAqDxEL4k+5tOPytA=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-b7Pqcv0Okg6j5cKDMoUv8Tad7zqNcSfIqB+YhxP+qzYTVfmv56HD7cdwELDquHVK" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-fW7sZOGWVAXp8p1vUxj2IHVdA4kgiPZKNrE03i1bua3iu7x2j2VXvrYyu6kPEf1g" crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>
