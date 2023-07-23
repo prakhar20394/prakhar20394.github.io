@@ -1621,6 +1621,7 @@ footer > .site-menu {
 	.input-group-hero {
 	  display: none;
   }
+}
   
   /* Styles for screens with a width greater than 767px (larger devices) */
   @media (min-width: 768px) {
