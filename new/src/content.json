@@ -1,0 +1,182 @@
+{
+  "name": "Prakhar Bhargava",
+  "role": "AI Product Manager · UX Strategy · Applied AI",
+  "tagline": "I build AI products that align real user needs with business outcomes — by blending product thinking, UX research, and engineering execution.",
+
+  "heroImage": "/img/profile.jpg",
+
+  "nav": [
+    { "label": "Background", "href": "#background" },
+    { "label": "Work", "href": "#work" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+
+  "method": [
+    {
+      "Discover": [
+        "User interviews",
+        "Field studies",
+        "Journey mapping",
+        "Heuristic reviews",
+        "Opportunity discovery"
+      ],
+      "Define": [
+        "Problem framing",
+        "Impact metrics",
+        "MVP scope & prioritization",
+        "Business alignment",
+        "Roadmapping"
+      ],
+      "Design": [
+        "Flows & wireframes",
+        "Prototyping",
+        "AI UX patterns",
+        "Design systems",
+        "Usability testing"
+      ],
+      "Deliver": [
+        "Spec to build",
+        "Cross-functional alignment",
+        "Telemetry & KPIs",
+        "Feedback loops",
+        "Iterate to adoption"
+      ]
+    }
+  ],
+
+  "work": [
+    {
+      "title": "AI Deployment at Scale",
+      "subtitle": "Measurable quality improvement & AI adoption at industrial scale.",
+      "tag": "AI Adoption",
+      "image": "/img/work/ai-industrial.jpg",
+      "href": "#",
+      "phases": ["Discover", "Define", "Deliver"]
+    },
+    {
+      "title": "Clinical AI for Screenings",
+      "subtitle": "Workflows that help clinicians act faster with confidence.",
+      "tag": "Healthcare AI",
+      "image": "/img/work/health-ai.jpg",
+      "href": "#",
+      "phases": ["Discover", "Design", "Deliver"]
+    },
+    {
+      "title": "GovTech at Population Scale",
+      "subtitle": "Reduced friction for millions of public platform users.",
+      "tag": "GovTech",
+      "image": "/img/work/govtech.jpg",
+      "href": "#",
+      "phases": ["Define", "Design", "Deliver"]
+    },
+    {
+      "title": "AR & HCI for Learning",
+      "subtitle": "Immersive interactions for early childhood education.",
+      "tag": "HCI · EdTech",
+      "image": "/img/work/ar-learning.jpg",
+      "href": "#",
+      "phases": ["Design", "Deliver"]
+    }
+  ],
+
+  "experience": [
+    {
+      "company": "Ripik AI",
+      "companyUrl": "https://ripik.ai",
+      "logo": "/img/logos/ripik.jpeg",
+      "period": "July 2024 — Present",
+      "summary": "Led the lifecycle for 15+ AI deployments across manufacturing, improving yield, compliance, and decision making.",
+      "tags": [
+        "0→1 Products",
+        "AI Adoption",
+        "Pilot to Scale",
+        "Impact Delivery"
+      ],
+      "positions": [
+        {
+          "title": "Senior Solutions Associate — Product",
+          "period": "August 2025 — Present",
+          "bullets": [
+            "Drove value discovery workshops across domains — unlocking a ₹2Cr+ business pipeline.",
+            "Managing portfolio of Hindalco (Upstream, Downstream, Mines), ITC(Paper), HZL Mines, Alicon(Process Optimisation)"
+          ]
+        },
+        {
+          "title": "Solutions Associate",
+          "period": "November 2024 — July 2025",
+          "bullets": [
+            "Collaborated with data scientists, engineers, and designers to align technical and design requirements.",
+            "Performed data analytics with Python and Excel, transforming insights into actionable improvements and reducing rejection rates by 25.2% for a leading automobile parts manufacturing plant.",
+            "Implemented Vision AI analytics solutions to improve yield consistency, raw material analysis and safety monitoring"
+          ]
+        },
+        {
+          "title": "Frontend Engineer",
+          "period": "July 2024 — December 2024",
+          "bullets": [
+            "Utilizing technologies such as React, Redux, Tailwind, and AWS.",
+            "Contributing to the design and development of an internal design system to streamline DesignOps and establish a cohesive design language."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Wadhwani AI",
+      "companyUrl": "https://wadhwaniai.org",
+      "logo": "/img/logos/wadhwani.jpeg",
+      "period": "2023 — 2024",
+      "summary": "Improved clinical screening workflows and built a scalable design system used across 5+ verticals.",
+      "tags": ["Healthcare UX", "Design Systems", "Public Impact"],
+      "positions": [
+        {
+          "title": "UX/UI Design Intern",
+          "period": "2023 — 2024",
+          "bullets": [
+            "Conducted user research and usability testing at AIIMS Delhi and Vision Centres to inform the design of an AI-based Diabetic Retinopathy screening solution, set for pilot in August 2023.",
+            "Contributed to solution development in diverse domains, including Agriculture (KKMS), Tuberculosis (TB Triage), and Education (Swayam, Swayam Prabha), enhancing user experience and adoption.",
+            "Created a comprehensive Design System adopted by the entire Design team, enhancing consistency and efficiency across projects.",
+            "Initiated and led the Design Playbook project to document internal design and solution practices, fostering knowledge sharing and standardization.",
+            "Partnered with the Punjab government to design their Public Redressal System, streamlining citizen feedback and issue resolution processes."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Government e-Marketplace",
+      "companyUrl": "https://gem.gov.in",
+      "logo": "/img/logos/gem.png",
+      "period": "2022",
+      "summary": "Reduced drop-offs and improved flows for millions of registered businesses.",
+      "tags": ["Scale UX", "Friction Removal", "Service Design"],
+      "positions": [
+        {
+          "title": "UX Intern",
+          "period": "2022",
+          "bullets": [
+            "Resolved 200+ UX issues and achieved a 36% reduction in drop-offs.",
+            "Built a scalable Design System to unify 100+ vendor-developed screens."
+          ]
+        }
+      ]
+    }
+  ],
+
+  "contact": {
+    "lastUpdated": "October 2025",
+    "avatar": "/img/profile-illustration.jpg",
+    "phone": "+91 98993 26396",
+    "lines": ["AI Product • UX Strategy • Applied AI", "India / Remote"],
+    "links": [
+      { "label": "Email", "href": "mailto:hello@prakharbhargava.in" },
+      { "label": "Behance", "href": "https://behance.net/prakharbhargava1" },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/prakharbhargava35"
+      },
+      { "label": "GitHub", "href": "https://github.com/prakhar-bhargava" },
+      { "label": "Resume", "href": "/Prakhar-Bhargava-Resume.pdf" }
+    ]
+  },
+
+  "footerNote": "Excited for the future. Let's connect!"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "finding-the-actual-problem",
+    "title": "Finding the Actual Problem",
+    "dateISO": "2025-05-12",
+    "tags": ["Discovery", "JTBD"],
+    "excerpt": "A simple loop to avoid building for the symptom, not the cause.",
+    "content": [
+      "Most teams start with a request. That’s fine — it’s a clue, not a requirement.",
+      "A lightweight loop: trigger → current workaround → desired outcome → constraints. If a fix doesn’t improve the workaround or outcome, it’s likely solution-first."
+    ]
+  },
+  {
+    "slug": "writing-crisper-prds",
+    "title": "Writing Crisper PRDs",
+    "dateISO": "2025-06-03",
+    "tags": ["Execution", "Specs"],
+    "excerpt": "Structure, not length, makes a PRD useful.",
+    "content": [
+      "Good PRDs reduce ambiguity for design and engineering. They clarify outcomes, guardrails, and edge cases.",
+      "Try: Problem, Goals/Non-goals, Users/Scenarios, Requirements, Open Questions, Metrics."
+    ]
+  }
+]
