@@ -9,6 +9,9 @@ import React, { useEffect, useRef, useState } from "react";
 export default function AvatarHero() {
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const containerRef = useRef(null);
+  const eyeLeftRef = useRef(null);
+  const eyeRightRef = useRef(null);
 
   // load Montserrat once
   useEffect(() => {
@@ -31,7 +34,52 @@ export default function AvatarHero() {
     else root.classList.remove("isPlaying");
   }, [isPlaying]);
 
-  const containerRef = useRef(null);
+  // Eye tracking based on cursor movement
+  useEffect(() => {
+    const leftTracker = eyeLeftRef.current;
+    const rightTracker = eyeRightRef.current;
+
+    if (!leftTracker || !rightTracker) return;
+
+    const handleMouseMove = (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+
+      const calculateAndApplyEyePosition = (trackerElement) => {
+        const rect = trackerElement.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const angle = Math.atan2(mouseY - centerY, mouseX - centerX);
+        const distance = 8;
+
+        const x = Math.cos(angle) * distance;
+        const y = Math.sin(angle) * distance;
+
+        trackerElement.style.transform = `translate(${x}px, ${y}px)`;
+      };
+
+      try {
+        calculateAndApplyEyePosition(leftTracker);
+        calculateAndApplyEyePosition(rightTracker);
+      } catch (err) {
+        // Silently handle any errors
+      }
+    };
+
+    // Use throttling for better performance
+    let lastTime = 0;
+    const throttledMouseMove = (e) => {
+      const now = Date.now();
+      if (now - lastTime > 16) { // ~60fps
+        handleMouseMove(e);
+        lastTime = now;
+      }
+    };
+
+    window.addEventListener("mousemove", throttledMouseMove);
+    return () => window.removeEventListener("mousemove", throttledMouseMove);
+  }, []);
 
   const toggleAudio = async () => {
     const el = audioRef.current;
@@ -94,11 +142,15 @@ export default function AvatarHero() {
             {/* Eyes + brows */}
             <div className="eye-shadow" id="left">
               <div className="eyebrow"></div>
-              <div className="eye"></div>
+              <div className="eye-tracker" ref={eyeLeftRef}>
+                <div className="eye"></div>
+              </div>
             </div>
             <div className="eye-shadow" id="right">
               <div className="eyebrow"></div>
-              <div className="eye"></div>
+              <div className="eye-tracker" ref={eyeRightRef}>
+                <div className="eye"></div>
+              </div>
             </div>
 
             {/* Nose + mouth + beard */}
@@ -120,7 +172,7 @@ export default function AvatarHero() {
           </div>
         </div>
 
-        {/* Floating icons */}
+        {/* Floating icons
         <span className="floating-icon i1" data-pos="left">
           📓
         </span>
@@ -132,7 +184,7 @@ export default function AvatarHero() {
         </span>
         <span className="floating-icon i4" data-pos="far-right">
           ✈️
-        </span>
+        </span> */}
 
         {/* Play / Pause Control */}
         <button
@@ -145,13 +197,13 @@ export default function AvatarHero() {
         >
           {isPlaying ? (
             <>
-              <span className="icon">▮▮</span>
-              Pause
+              <span className="icon">⏸</span>
+              <span>Pause</span>
             </>
           ) : (
             <>
-              <span className="icon">▶</span>
-              Play
+              <span className="icon">🔊</span>
+              <span>Play</span>
             </>
           )}
         </button>
@@ -163,10 +215,10 @@ export default function AvatarHero() {
 const css = `
 /* ===== Scoped Avatar CSS ===== */
 .avatarHero {
-  --skin:#F1C08E;
-  --hair:#111111;
-  --bg:#95B3BF;
-  --heart:#EF4136;
+  --skin: #F1C08E;
+  --hair: #1A1A1A;
+  --bg: #95B3BF;
+  --heart: #EF4136;
 
   /* Instagram-like gradient for background plate */
   --accentGradient: radial-gradient(60% 60% at 60% 30%, #FFB46D 0%, #F77737 35%, #C13584 65%, #5851DB 100%);
@@ -178,7 +230,7 @@ const css = `
 
 /* A responsive canvas so it works on mobile too */
 .avatarHero .wrapper{
-  width: clamp(260px, 48vw, 460px);
+  width: clamp(160px, 32vw, 320px);
   margin: 0 auto;
   position: relative;
   text-align: center;
@@ -206,7 +258,7 @@ const css = `
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   border-radius: 50%;
-  border: 10px solid var(--accent);
+  border: 5px solid var(--accent);
   transform: scale(0);
   transform-origin: center;
   pointer-events: none;
@@ -230,15 +282,15 @@ const css = `
 
 /* Shift controls (negative = left/up, positive = right/down) */
 .avatarHero {
-  --head-shift-x: -30%;
-  --head-shift-y: -59%;
+  --head-shift-x: -25%;
+  --head-shift-y: -52%;
 }
 
 /* HEAD */
 .avatarHero .head{
-  width: 52%;
-  aspect-ratio: 0.75 / 1;
-  border-radius: 50px;
+  width: 48%;
+  aspect-ratio: 0.88 / 1;            
+  border-radius: 55px 55px 52px 52px; 
   background: var(--skin);
   position: absolute;
   left: calc(50% + var(--head-shift-x));
@@ -249,38 +301,55 @@ const css = `
   z-index: 5; /* stacking context for headphones */
 }
 
+/* Ears */
+.avatarHero .ear{
+  width: 28px;
+  height: 36px;
+  background: var(--skin);
+  border: 3px solid #B8845F;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  opacity: 0;
+  animation: grow 0.7s 1.2s ease forwards;
+  z-index: 4;
+}
+.avatarHero .ear#left{ left: -16px; }
+.avatarHero .ear#right{ right: -16px; }
+
 .avatarHero .hair-main{
-  width:112%;
+  width:115%;
   height: 0px;
   background: #000;
-  border-radius: 54px 54px 0 0;
+  border-radius: 56px 56px 0 0;
   position: absolute;
-  left: -6%;
-  top: -4%;
+  left: -7.5%;
+  top: -2%;
   z-index: 6;
   animation: hair-anim 0.7s 0.9s 1 ease forwards;
 }
 .avatarHero .hair-top{
-  width: 65%;
-  height: 70px;
+  width: 70%;
+  height: 48px;  
+  border-radius: 26px;
   opacity: 0;
-  border-top-right-radius: 30px;
+  border-top-right-radius: 32px;
   background: var(--hair);
   position: relative;
-  top: -17px;
+  top: -14px;
   left: 50%;
   transform: translateX(-50%);
   transform-origin: right;
   animation: hair-top-anim 0.7s 1s 1 ease forwards;
 }
 .avatarHero .hair-bottom{
-  width: 27%;
-  height: 50px;
+  width: 30%;
+  height: 40px;
   opacity: 0;
-  border-bottom-left-radius: 25px;
+  border-bottom-left-radius: 20px;
   background: var(--hair);
   position: relative;
-  top: -20px;
+  top: -16px;
   left: 50%;
   transform: translateX(-50%);
   transform-origin: left;
@@ -314,48 +383,66 @@ const css = `
 .avatarHero .eye-shadow{
   width:30px; height: 15px;
   border-radius: 0 0 15px 15px;
-  background:rgba(0,0,0,0.08);
+  background:rgba(0,0,0,0);
   position: absolute;
   top: 50%;
   transform: scale(0);
   animation: grow 0.7s 2s 1 ease forwards;
+  z-index: 12;
+  pointer-events: none;
 }
-.avatarHero .eye-shadow#left{ left: 28%; z-index: 8; }
-.avatarHero .eye-shadow#right{ right: 28%; z-index: 8; }
+.avatarHero .eye-shadow#left{ left: 28%; }
+.avatarHero .eye-shadow#right{ right: 28%; }
+
+.avatarHero .eye-tracker{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  will-change: transform;
+  transform: translate(0, 0);
+  transition: transform 0.05s ease-out;
+  pointer-events: auto;
+}
 
 .avatarHero .eyebrow{
-  width: 40px; height: 10px;
+  width: 42px; height: 12px;
   background: var(--hair);
   position: absolute;
-  top: -35px;
+  top: -36px;
   left: 50%;
-  margin-left: -20px;
+  margin-left: -21px;
   opacity: 0;
   backface-visibility: hidden;
+  z-index: 13;
+  border-radius: 6px;
 }
 .avatarHero .eye-shadow#left .eyebrow{ animation: eyebrow-anim-left 0.7s 2.2s 1 ease forwards; }
 .avatarHero .eye-shadow#right .eyebrow{ animation: eyebrow-anim-right 0.7s 2.2s 1 ease forwards, eyebrow-raise 2s 6.6s infinite alternate ease-in-out; }
 
 .avatarHero .eye{
-  width: 20px;
-  height: 28px;
-  border-radius: 10px;
-  background: #334C68;
+  width: 22px;
+  height: 26px;
+  border-radius: 50% 50% 45% 45%;
+  background: #2D1810;
   position: absolute;
-  top: -18px;
+  top: -19px;
   left: 50%;
-  margin-left: -10px;
+  margin-left: -11px;
   transform: scale(0);
   transform-origin: bottom;
   animation: grow 0.7s 2.2s 1 ease forwards, eye-blink 4s 4.4s infinite linear;
+  z-index: 11;
+  box-shadow: inset -2px -1px 3px rgba(0,0,0,0.3);
+}
 }
 
 /* Nose, mouth, beard */
 .avatarHero .nose{
-  width: 20px;
-  height: 45px;
-  background: #D29430;
-  border-radius: 10px;
+  width: 18px;
+  height: 42px;
+  background: #B8845F;
+  border-radius: 0 0 12px 12px;
   position: absolute;
   left: 45%;
   top: 58%;
@@ -366,32 +453,40 @@ const css = `
 }
 
 .avatarHero .mouth{
-  width: 66px;
-  height: 33px;
-  border-radius: 0 0 33px 33px;
-  background: white;
+  width: 62px;
+  height: 28px;
+  border-radius: 0 0 31px 31px;
+  background: #9B6B5F;
   position: absolute;
-  top: 105%;
+  top: 96%;
   left: 35%;
   transform: translateX(-50%) scale(0);
   animation: grow 0.7s 2.6s 1 ease forwards;
   z-index: 9;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 480px) {
+  .avatarHero .mouth {
+    top: 84%;
+  }
 }
 
 .avatarHero .beard {
   position: absolute;
-  width: 85%;
-  height: 50%;
+  width: 82%;
+  height: 48%;
   left: 50%;
-  top: 62%;
+  top: 64%;
   transform: translateX(-50%);
   background: var(--hair);
-  border-radius: 0 0 80px 80px;
-  clip-path: ellipse(45% 35% at 50% 0%);
+  border-radius: 0 0 75px 75px;
+  clip-path: ellipse(46% 42% at 50% 0%);
   opacity: 0;
   transform-origin: top center;
   animation: grow 0.8s 2.5s ease forwards;
   z-index: 8;
+  box-shadow: inset -2px -2px 4px rgba(0,0,0,0.3);
 }
 
 // /* Face shadow */
@@ -515,7 +610,7 @@ const css = `
 .avatarHero .floating-icon.i3{ animation: icon-float 2.2s 4.3s infinite ease; }
 .avatarHero .floating-icon.i4{ animation: icon-float 2.2s 4.7s infinite ease; }
 
-/* Cycling shirt text */
+/* Cycling shirt text - HIDDEN for professional look */
 .avatarHero .shirt-text{
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -529,14 +624,15 @@ const css = `
   -webkit-text-stroke: 2px rgba(0,0,0,0.6);
   z-index: 10;
   pointer-events: none;
-  opacity: 0;
+  opacity: 0 !important;
   animation-fill-mode: both !important;
+  display: none !important;
 }
-.avatarHero .shirt-text.t1{ animation: text-cycle 8s 3.0s infinite ease; }
-.avatarHero .shirt-text.t2{ animation: text-cycle 8s 4.6s infinite ease; color: var(--heart); }
-.avatarHero .shirt-text.t3{ animation: text-cycle 8s 6.2s infinite ease; }
-.avatarHero .shirt-text.t4{ animation: text-cycle 8s 7.8s infinite ease; }
-.avatarHero .shirt-text.t5{ animation: text-cycle 8s 9.4s infinite ease; }
+.avatarHero .shirt-text.t1{ animation: none; }
+.avatarHero .shirt-text.t2{ animation: none; }
+.avatarHero .shirt-text.t3{ animation: none; }
+.avatarHero .shirt-text.t4{ animation: none; }
+.avatarHero .shirt-text.t5{ animation: none; }
 
 /* Play/Pause button (glass, minimal) */
 .avatarHero .soundToggle{
@@ -544,30 +640,30 @@ const css = `
   right: 6%;
   bottom: 6%;
   padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.45);
-  background: rgba(255,255,255,.22);
-  color: #041216;
-  font-weight: 700;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background: #ffffff;
+  color: #333;
+  font-weight: 600;
   font-family: inherit;
   letter-spacing: .02em;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+  box-shadow: 0 2px 8px rgba(0,0,0,.15);
   transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
   z-index: 30;
+  font-size: 0.85rem;
 }
 .avatarHero .soundToggle .icon{
   display: inline-block;
-  transform: translateY(-1px);
+  font-size: 1.1rem;
 }
 .avatarHero .soundToggle:hover{
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.32);
-  box-shadow: 0 6px 22px rgba(0,0,0,.28);
+  transform: translateY(-1px);
+  background: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
 }
 
 /* Keyframes */
@@ -588,11 +684,84 @@ const css = `
 @keyframes icon-float{0%{opacity:0;transform:translate(0,50px)}30%{transform:rotate(8deg) translate(-20px,0)}45%{opacity:1}60%{transform:rotate(-8deg) translate(20px,-90px)}100%{opacity:0;transform:rotate(0) translate(0,-180px)}}
 @keyframes text-cycle{0%{opacity:0;transform:translateY(100px)}5%{opacity:1;transform:translateY(-10px)}20%{opacity:1;transform:translateY(0)}25%{opacity:0;transform:translateY(5px)}100%{opacity:0;transform:translateY(100px)}}
 
-/* Small screens */
-@media (max-width: 520px){
-  .avatarHero .floating-icon[data-pos="left"]{ margin-left:-54%; top:54%; }
-  .avatarHero .floating-icon[data-pos="right"]{ margin-left:38%; top:36%; }
-  .avatarHero .floating-icon[data-pos="far-left"]{ margin-left:-42%; top:24%; }
+/* Extra small phones */
+@media (max-width: 360px){
+  .avatarHero .wrapper{
+    width: clamp(180px, 90vw, 280px);
+    padding: 0 8px;
+  }
+  .avatarHero .soundToggle{
+    right: 8px;
+    bottom: 8px;
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+  .avatarHero .shirt-text{
+    bottom: 12%;
+    left: 28%;
+    font-size: clamp(12px, 2vw, 16px);
+  }
+  .avatarHero .floating-icon{
+    font-size: clamp(20px, 3vw, 28px);
+  }
+  .avatarHero .floating-icon[data-pos="left"]{ margin-left:-56%; top:56%; }
+  .avatarHero .floating-icon[data-pos="right"]{ margin-left:40%; top:38%; }
+  .avatarHero .floating-icon[data-pos="far-left"]{ margin-left:-44%; top:26%; }
+  .avatarHero .floating-icon[data-pos="far-right"]{ margin-left:50%; top:62%; }
+}
+
+/* Small phones */
+@media (min-width: 361px) and (max-width: 480px){
+  .avatarHero .wrapper{
+    width: clamp(240px, 85vw, 360px);
+    padding: 0 10px;
+  }
+  .avatarHero .soundToggle{
+    right: 10px;
+    bottom: 10px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  .avatarHero .shirt-text{
+    font-size: clamp(14px, 2.8vw, 22px);
+  }
+  .avatarHero .floating-icon{
+    font-size: clamp(26px, 3.5vw, 40px);
+  }
+  .avatarHero .floating-icon[data-pos="left"]{ margin-left:-55%; top:54%; }
+  .avatarHero .floating-icon[data-pos="right"]{ margin-left:39%; top:35%; }
+  .avatarHero .floating-icon[data-pos="far-left"]{ margin-left:-43%; top:24%; }
+  .avatarHero .floating-icon[data-pos="far-right"]{ margin-left:49%; top:61%; }
+}
+
+/* Medium phones */
+@media (min-width: 481px) and (max-width: 600px){
+  .avatarHero .wrapper{
+    width: clamp(320px, 80vw, 420px);
+  }
+  .avatarHero .soundToggle{
+    right: 12px;
+    bottom: 12px;
+  }
+  .avatarHero .floating-icon[data-pos="left"]{ margin-left:-54%; top:52%; }
+  .avatarHero .floating-icon[data-pos="right"]{ margin-left:38%; top:33%; }
+  .avatarHero .floating-icon[data-pos="far-left"]{ margin-left:-42%; top:23%; }
   .avatarHero .floating-icon[data-pos="far-right"]{ margin-left:48%; top:60%; }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px){
+  .avatarHero .wrapper{
+    width: clamp(280px, 40vw, 400px);
+  }
+}
+
+/* Desktop */
+@media (min-width: 901px){
+  .avatarHero .wrapper{
+    width: clamp(300px, 35vw, 450px);
+  }
 }
 `;

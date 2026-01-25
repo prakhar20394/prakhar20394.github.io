@@ -27,6 +27,50 @@ const GlobalStyle = createGlobalStyle`
 
   /* smooth scroll */
   html { scroll-behavior: smooth; }
+
+  /* scroll snap for main sections */
+  main {
+    scroll-snap-type: y mandatory;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+  }
+
+  /* Avatar-synced heading animations */
+  .avatar-synced {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    will-change: transform, opacity;
+    display: inline-block;
+  }
+
+  /* Animate when parent has .visible class */
+  .visible .avatar-synced {
+    animation: hello-fade 0.7s 0.2s 1 ease forwards, music-move 1s 2.5s infinite alternate ease-in-out;
+  }
+
+  .avatar-accent {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    background-image: var(--accentGradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .visible .avatar-accent {
+    animation: hello-fade 0.7s 0.4s 1 ease forwards;
+  }
+
+  @keyframes hello-fade { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+  /* subtle music-move used by avatar and hero text */
+  @keyframes music-move{0%,100%{transform:rotate(0)}33%{transform:rotate(-5deg)}66%{transform:rotate(5deg)}}
 `;
 
 export default GlobalStyle;

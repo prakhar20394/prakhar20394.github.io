@@ -21,15 +21,34 @@ export default function Nav() {
   const [navHidden, setNavHidden] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const lastY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
+  const scrollTimeoutRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      setNavHidden(y > lastY.current && y > 24);
+      const isScrollingUp = y < lastY.current;
+      const isAtTop = y < 24;
+
+      // Show navbar when scrolling up or at top, hide when scrolling down
+      setNavHidden(!isScrollingUp && !isAtTop);
       lastY.current = y;
+
+      // Clear any pending timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      // If scrolling, ensure navbar is visible for a moment before potentially hiding
+      if (isScrollingUp || isAtTop) {
+        setNavHidden(false);
+      }
     };
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
   }, []);
 
   useEffect(() => {

@@ -161,6 +161,15 @@ export const IntroGrid = styled.div`
 
   @media (max-width: ${bp.md}) {
     grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 32px);
+  }
+
+  @media (max-width: ${bp.sm}) {
+    gap: clamp(18px, 3.5vw, 24px);
+  }
+
+  @media (max-width: 480px) {
+    gap: clamp(16px, 3vw, 20px);
   }
 `;
 export const IntroCard = styled.div``;

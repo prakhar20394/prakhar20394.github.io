@@ -17,8 +17,8 @@
         "User interviews",
         "Field studies",
         "Journey mapping",
-        "Heuristic reviews",
-        "Opportunity discovery"
+        "Competitor analysis",
+        "Value Discovery"
       ],
       "Define": [
         "Problem framing",
@@ -32,14 +32,14 @@
         "Prototyping",
         "AI UX patterns",
         "Design systems",
-        "Usability testing"
+        "Usability Testing"
       ],
       "Deliver": [
         "Spec to build",
         "Cross-functional alignment",
-        "Telemetry & KPIs",
+        "KPI Tracking",
         "Feedback loops",
-        "Iterate to adoption"
+        "Training & Adoption"
       ]
     }
   ],
@@ -92,13 +92,14 @@
         "Pilot to Scale",
         "Impact Delivery"
       ],
+      "default": "Open",
       "positions": [
         {
           "title": "Senior Solutions Associate — Product",
           "period": "August 2025 — Present",
           "bullets": [
             "Drove value discovery workshops across domains — unlocking a ₹2Cr+ business pipeline.",
-            "Managing portfolio of Hindalco (Upstream, Downstream, Mines), ITC(Paper), HZL Mines, Alicon(Process Optimisation)"
+            "Managing portfolio of Hindalco - Aluminum & Copper) (Mines, Upstream, Downstream), ITC(Paper), Hindustan Zinc (Mines), Alicon(Process Optimisation)"
           ]
         },
         {
@@ -127,6 +128,7 @@
       "period": "2023 — 2024",
       "summary": "Improved clinical screening workflows and built a scalable design system used across 5+ verticals.",
       "tags": ["Healthcare UX", "Design Systems", "Public Impact"],
+      "default": "Closed",
       "positions": [
         {
           "title": "UX/UI Design Intern",
@@ -148,6 +150,7 @@
       "period": "2022",
       "summary": "Reduced drop-offs and improved flows for millions of registered businesses.",
       "tags": ["Scale UX", "Friction Removal", "Service Design"],
+      "default": "Closed",
       "positions": [
         {
           "title": "UX Intern",

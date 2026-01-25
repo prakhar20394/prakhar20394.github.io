@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import GlobalStyle from "../styles/GlobalStyle";
 import content from "../content.json";
+import AvatarHero from "../components/AvatarHero";
+import IntroAnimation from "../components/IntroAnimation";
+import { AvatarWrapper } from "../styles/IntroStyles";
 import {
   // layout + shared
   Shell,
@@ -197,25 +200,11 @@ export default function Home() {
         <Shell>
           <IntroGrid>
             <IntroCard>
-              <H1>
-                I deliver AI products rooted in
-                <Accent> user empathy</Accent> and
-                <Accent> measurable impact</Accent>.
-              </H1>
-              <Muted style={{ marginTop: 12 }}>{content.tagline}</Muted>
-              <div style={{ marginTop: 10 }}>
-                {[
-                  "Solution Engineering",
-                  "Product & Strategy",
-                  "Execution",
-                ].map((a, i) => (
-                  <Pill key={i}>{a}</Pill>
-                ))}
-              </div>
+              <IntroAnimation content={content} />
             </IntroCard>
-            <div style={{ display: "grid", placeItems: "center" }}>
-              <Avatar $img={content.heroImage} />
-            </div>
+            <AvatarWrapper>
+              <AvatarHero />
+            </AvatarWrapper>
           </IntroGrid>
         </Shell>
       </Section>
