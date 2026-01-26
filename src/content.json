@@ -1,0 +1,208 @@
+{
+  "name": "Prakhar Bhargava",
+  "role": "AI Product Manager · UX Strategy · Applied AI",
+  "tagline": "I build AI products that align real user needs with business outcomes — by blending product thinking, UX research, and engineering execution.",
+
+  "heroImage": "/img/profile.jpg",
+
+  "nav": [
+    { "label": "About", "href": "#about" },
+    { "label": "Background", "href": "#background" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+
+  "method": [
+    {
+      "Discover": [
+        "User interviews",
+        "Field studies",
+        "Journey mapping",
+        "Competitor analysis",
+        "Value Discovery"
+      ],
+      "Define": [
+        "Problem framing",
+        "Impact metrics",
+        "MVP scope & prioritization",
+        "Business alignment",
+        "Roadmapping"
+      ],
+      "Design": [
+        "Flows & wireframes",
+        "Prototyping",
+        "AI UX patterns",
+        "Design systems",
+        "Usability Testing"
+      ],
+      "Deliver": [
+        "Spec to build",
+        "Cross-functional alignment",
+        "KPI Tracking",
+        "Feedback loops",
+        "Training & Adoption"
+      ]
+    }
+  ],
+
+  "work": [
+    {
+      "title": "AI Deployment at Scale",
+      "subtitle": "Measurable quality improvement & AI adoption at industrial scale.",
+      "tag": "AI Adoption",
+      "image": "/img/work/ai-industrial.jpg",
+      "href": "#",
+      "phases": ["Discover", "Define", "Deliver"],
+      "workId": "ai-deployment-at-scale"
+    },
+    {
+      "title": "Clinical AI for Screenings",
+      "subtitle": "Workflows that help clinicians act faster with confidence.",
+      "tag": "Healthcare AI",
+      "image": "/img/work/health-ai.jpg",
+      "href": "#",
+      "phases": ["Discover", "Design", "Deliver"],
+      "workId": "clinical-ai-screenings"
+    },
+    {
+      "title": "GovTech at Population Scale",
+      "subtitle": "Reduced friction for millions of public platform users.",
+      "tag": "GovTech",
+      "image": "/img/work/govtech.jpg",
+      "href": "#",
+      "phases": ["Define", "Design", "Deliver"],
+      "workId": "govtech-population-scale"
+    },
+    {
+      "title": "AR & HCI for Learning",
+      "subtitle": "Immersive interactions for early childhood education.",
+      "tag": "HCI · EdTech",
+      "image": "/img/work/ar-learning.jpg",
+      "href": "#",
+      "phases": ["Design", "Deliver"],
+      "workId": "ar-hci-learning"
+    }
+  ],
+
+  "experience": [
+    {
+      "company": "Ripik AI",
+      "companyUrl": "https://ripik.ai",
+      "logo": "/img/logos/ripik.jpeg",
+      "period": "July 2024 — Present",
+      "summary": "Led the lifecycle for 15+ AI deployments across manufacturing, improving yield, compliance, and decision making.",
+      "tags": [
+        "0→1 Products",
+        "AI Adoption",
+        "Pilot to Scale",
+        "Impact Delivery"
+      ],
+      "default": "Open",
+      "positions": [
+        {
+          "title": "Senior Solutions Associate — Product",
+          "period": "August 2025 — Present",
+          "bullets": [
+            "Drove value discovery workshops across domains — unlocking a ₹2Cr+ business pipeline.",
+            "Managing portfolio of Hindalco - Aluminum & Copper (Mines, Upstream, Downstream), ITC(Paper), Hindustan Zinc (Mines), Alicon(Process Optimisation)"
+          ]
+        },
+        {
+          "title": "Solutions Associate",
+          "period": "November 2024 — July 2025",
+          "bullets": [
+            "Collaborated with data scientists, engineers, and designers to align technical and design requirements.",
+            "Performed data analytics with Python and Excel, transforming insights into actionable improvements and reducing rejection rates by 25.2% for a leading automobile parts manufacturing plant.",
+            "Implemented Vision AI analytics solutions to improve yield consistency, raw material analysis and safety monitoring"
+          ]
+        },
+        {
+          "title": "Frontend Engineer",
+          "period": "July 2024 — December 2024",
+          "bullets": [
+            "Utilizing technologies such as React, Redux, Tailwind, and AWS.",
+            "Contributing to the design and development of an internal design system to streamline DesignOps and establish a cohesive design language."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Wadhwani AI",
+      "companyUrl": "https://wadhwaniai.org",
+      "logo": "/img/logos/wadhwani.jpeg",
+      "period": "2023 — 2024",
+      "summary": "Improved clinical screening workflows and built a scalable design system used across 5+ verticals.",
+      "tags": ["Healthcare UX", "Design Systems", "Public Impact"],
+      "default": "Closed",
+      "positions": [
+        {
+          "title": "UX/UI Design Intern",
+          "period": "2023 — 2024",
+          "bullets": [
+            "Conducted user research and usability testing at AIIMS Delhi and Vision Centres to inform the design of an AI-based Diabetic Retinopathy screening solution, set for pilot in August 2023.",
+            "Contributed to solution development in diverse domains, including Agriculture (KKMS), Tuberculosis (TB Triage), and Education (Swayam, Swayam Prabha), enhancing user experience and adoption.",
+            "Created a comprehensive Design System adopted by the entire Design team, enhancing consistency and efficiency across projects.",
+            "Initiated and led the Design Playbook project to document internal design and solution practices, fostering knowledge sharing and standardization.",
+            "Partnered with the Punjab government to design their Public Redressal System, streamlining citizen feedback and issue resolution processes."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Government e-Marketplace",
+      "companyUrl": "https://gem.gov.in",
+      "logo": "/img/logos/gem.png",
+      "period": "2022",
+      "summary": "Reduced drop-offs and improved flows for millions of registered businesses.",
+      "tags": ["Scale UX", "Friction Removal", "Service Design"],
+      "default": "Closed",
+      "positions": [
+        {
+          "title": "UX Intern",
+          "period": "2022",
+          "bullets": [
+            "Resolved 200+ UX issues and achieved a 36% reduction in drop-offs.",
+            "Built a scalable Design System to unify 100+ vendor-developed screens."
+          ]
+        }
+      ]
+    }
+  ],
+
+  "about": [
+    "I'm a Product Manager with a deep foundation in UX design and a passion for applied AI. My career has been about bridging the gap between user empathy and engineering excellence—taking products from concept to market with measurable impact.",
+    "My approach combines first-principles thinking, rigorous user research, and cross-functional collaboration. I thrive at the intersection of design, product strategy, and technology—where good ideas become great products that people actually want to use."
+  ],
+
+  "projects": [
+    {
+      "title": "Project Name",
+      "role": "Product Manager / Designer",
+      "description": "Brief description of the project and its impact.",
+      "responsibilities": [
+        "Led cross-functional team of engineers and designers",
+        "Defined product strategy and roadmap",
+        "Managed stakeholder communications"
+      ]
+    }
+  ],
+
+  "contact": {
+    "lastUpdated": "January 2026",
+    "avatar": "/img/profile-illustration.jpg",
+    "mosaicFolder": "/img/mosaic",
+    "phone": "+91 98993 26396",
+    "lines": ["AI Product • UX Strategy • Applied AI", "India / Remote"],
+    "links": [
+      { "label": "Email", "href": "mailto:hello@prakharbhargava.in" },
+      { "label": "Behance", "href": "https://behance.net/prakharbhargava1" },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/prakharbhargava35"
+      },
+      { "label": "GitHub", "href": "https://github.com/prakhar-bhargava" },
+      { "label": "Resume", "href": "/documents/Resume - Prakhar Bhargava.pdf" }
+    ]
+  },
+
+  "footerNote": "Excited for the future. Let's connect!"
+}

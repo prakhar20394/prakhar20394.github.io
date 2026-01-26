@@ -1,3 +1,9 @@
 {
-    "cleanUrls" : true
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build",
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/index.html" }
+    ]
 }
