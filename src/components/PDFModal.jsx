@@ -118,7 +118,7 @@ const MaterialIcon = styled.span`
   display: inline-flex;
 `;
 
-export default function PDFModal({ isOpen, onClose, pdfUrl, fileName }) {
+export default function PDFModal({ isOpen, onClose, pdfUrl, fileName, title }) {
   const pdfViewerRef = useRef(null);
 
   useEffect(() => {
@@ -133,7 +133,7 @@ export default function PDFModal({ isOpen, onClose, pdfUrl, fileName }) {
     script.onload = () => {
       if (window.AdobeDC && pdfViewerRef.current) {
         const adobeDCView = new window.AdobeDC.View({
-          clientId: "8c0e44fa98754cf7a27e6c5bb89de5dd", // Public client ID for embed mode
+          clientId: "bf0db43412bf45feb5bff182047986aa",
           divId: "adobe-dc-view",
         });
 
@@ -144,7 +144,7 @@ export default function PDFModal({ isOpen, onClose, pdfUrl, fileName }) {
           },
           {
             embedMode: "SIZED_CONTAINER",
-            showDownloadPDF: false,
+            showDownloadPDF: true,
             showPrintPDF: true,
             showLeftHandPanel: false,
             showAnnotationTools: false,
@@ -168,7 +168,7 @@ export default function PDFModal({ isOpen, onClose, pdfUrl, fileName }) {
         <ModalHeader>
           <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
             <h2 style={{ margin: 0, fontSize: 16, fontWeight: 600, fontFamily: 'Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif', letterSpacing: '-0.01em' }}>
-              {fileName?.replace(".pdf", "") || "Resume"}
+              {title || "Resume"}
             </h2>
             <DownloadButton href={pdfUrl} download={fileName}>
               <MaterialIcon style={{ fontSize: 18 }}>download</MaterialIcon>

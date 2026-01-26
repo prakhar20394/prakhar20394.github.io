@@ -12,6 +12,24 @@ import ProjectsResponsibilities from "./sections/Projects";
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  
+  useEffect(() => {
+    const clarityId = import.meta.env.VITE_CLARITY_ID || "i36g6d2vrr";
+    if (!clarityId || typeof window === "undefined") return;
+    if (window.clarity) return;
+
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () {
+        (c[a].q = c[a].q || []).push(arguments);
+      };
+      t = l.createElement(r);
+      t.async = 1;
+      t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", clarityId);
+  }, []);
+  
 
   useEffect(() => {
     // Check for saved theme preference or default to dark

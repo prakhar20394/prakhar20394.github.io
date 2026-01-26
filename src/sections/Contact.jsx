@@ -185,7 +185,7 @@ export default function Contact() {
 
   const resumeUrl = (content.contact.links || []).find(
     (l) => l.label.toLowerCase() === "resume"
-  )?.href || "/Prakhar-Bhargava-Resume.pdf";
+  )?.href || "/documents/Prakhar Bhargava Resume.pdf";
 
   useEffect(() => {
   const imageFileNames = [
@@ -414,7 +414,7 @@ export default function Contact() {
               </div>
 
               {/* Social: GitHub, LinkedIn, Behance */}
-              <div style={{ display: "inline-flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+              <div style={{ display: "inline-flex", gap: 2, alignItems: "center", flexWrap: "wrap" }}>
                 {[
                   { 
                     label: "GitHub", 

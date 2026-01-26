@@ -118,7 +118,7 @@ export default function IntroAnimation({ content }) {
         <HeroButtons>
           <HeroButton 
             className="primary" 
-            href="/Prakhar-Bhargava-Resume.pdf" 
+            href="/documents/Prakhar Bhargava Resume.pdf" 
             target="_blank" 
             rel="noreferrer"
           >

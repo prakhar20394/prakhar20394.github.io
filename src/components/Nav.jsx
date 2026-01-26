@@ -25,7 +25,8 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
   const lastY = useRef(typeof window !== "undefined" ? window.scrollY : 0);
   const scrollTimeoutRef = useRef(null);
 
-  const resumeUrl = "/Prakhar-Bhargava-Resume.pdf";
+  const resumeUrl = "/documents/Prakhar Bhargava Resume.pdf";
+  const resumeTitle = "Resume — Prakhar Bhargava";
 
   useEffect(() => {
     const onScroll = () => {
@@ -106,7 +107,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
               as="button"
               style={{ cursor: "pointer" }}
             >
-              Resume
+              See my Resume
             </ResumeBtn>
           </NavRight>
 
@@ -159,7 +160,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
           }}
           style={{ cursor: "pointer" }}
         >
-          Resume
+          View Resume
         </a>
       </MobileMenu>
 
@@ -181,6 +182,7 @@ export default function Nav({ isDarkMode, toggleDarkMode }) {
         onClose={() => setShowPDFModal(false)}
         pdfUrl={resumeUrl}
         fileName="Prakhar-Bhargava-Resume.pdf"
+        title={resumeTitle}
       />
     </>
   );
