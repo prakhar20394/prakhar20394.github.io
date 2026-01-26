@@ -3,21 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-
-  resolve: {
-    dedupe: ["react", "react-dom"],
-  },
-
-  optimizeDeps: {
-    include: ["react", "react-dom", "react-dom/client"],
-  },
-
-  build: {
-    rollupOptions: {
-      external: [],
-    },
-    commonjsOptions: {
-      include: [/node_modules/],
-    },
-  },
+  resolve: { dedupe: ["react", "react-dom"] },
 });
