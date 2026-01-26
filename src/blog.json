@@ -1,0 +1,265 @@
+[
+  {
+    "slug": "ai-deployment-at-scale",
+    "title": "AI Deployment at Scale",
+    "dateISO": "2025-01-15",
+    "tags": ["AI Adoption", "Manufacturing", "Discover", "Define", "Deliver"],
+    "excerpt": "Measurable quality improvement & AI adoption at industrial scale.",
+    "workId": "ai-deployment-at-scale",
+    "sections": [
+      {
+        "heading": "The Challenge",
+        "content": [
+          "Deploying AI in manufacturing isn't about the model—it's about integration, adoption, and measurable impact. At Ripik AI, I led the lifecycle for 15+ AI deployments across diverse verticals including automobile parts manufacturing, aluminum processing, and mining.",
+          "Manufacturing plants have complex workflows, tight constraints on disruption, and teams that need confidence in new systems. Moving from pilot to scale requires solving three problems simultaneously: technical integration, operational fit, and user adoption."
+        ]
+      },
+      {
+        "heading": "The Approach",
+        "content": [
+          "Our approach combined value discovery workshops, data-driven insights, and iterative design. For a leading automobile parts manufacturer, we reduced rejection rates by 25.2% through Vision AI analytics."
+        ],
+        "subsections": [
+          {
+            "heading": "Value Discovery",
+            "content": [
+              "We ran structured workshops to understand the actual pain points—not what stakeholders thought they needed, but what frontline teams were actually struggling with. This revealed workarounds and constraints that defined our design space."
+            ]
+          },
+          {
+            "heading": "Iterative Implementation",
+            "content": [
+              "For mining and aluminum operations, we optimized raw material analysis and yield consistency. Each deployment was treated as a learning opportunity, with tight feedback loops between data scientists, engineers, and plant operators."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Key Learnings",
+        "content": [
+          "Three principles emerged from deploying AI at industrial scale:"
+        ],
+        "subsections": [
+          {
+            "heading": "Understanding the Workaround",
+            "content": [
+              "Spend time understanding what people are doing now that works. The current workaround is the baseline—your solution must be demonstrably better, not just theoretically superior."
+            ]
+          },
+          {
+            "heading": "AI as Enhancement",
+            "content": [
+              "Frame AI as a tool that improves existing workflows, not a replacement. Teams adopt technology when it makes their work easier, not when it makes them redundant."
+            ]
+          },
+          {
+            "heading": "Pilot Economics",
+            "content": [
+              "Pilot with pilot economics—measure impact at the smallest viable scale before committing resources. Proving value early unlocks larger commitments."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "The Result",
+        "content": [
+          "A ₹2Cr+ business pipeline unlocked through structured discovery, and repeatable processes for deploying AI across different domains and manufacturing constraints.",
+          "More importantly: a proven methodology for moving from pilot to production, validated across industries and use cases."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "clinical-ai-screenings",
+    "title": "Clinical AI for Screenings",
+    "dateISO": "2025-01-10",
+    "tags": ["Healthcare AI", "Design Systems", "Discover", "Design", "Deliver"],
+    "excerpt": "Workflows that help clinicians act faster with confidence.",
+    "workId": "clinical-ai-screenings",
+    "sections": [
+      {
+        "heading": "Understanding Clinical Workflows",
+        "content": [
+          "Clinical workflows are time-sensitive, high-stakes, and deeply habitual. Introducing AI into these workflows means understanding what clinicians actually need—not what we think they need.",
+          "At Wadhwani AI, I led the design for an AI-based Diabetic Retinopathy screening solution, conducting user research and usability testing at AIIMS Delhi and Vision Centres. The goal was to augment human judgment, not replace it."
+        ]
+      },
+      {
+        "heading": "The Key Insight",
+        "content": [
+          "Clinicians don't want 'black box' AI predictions. They need confidence—clear indicators of when to trust the model, what the model is confident about, and what edge cases to watch for.",
+          "The interface became a communication tool between the model and the clinician, not just a prediction display."
+        ]
+      },
+      {
+        "heading": "Building a Design System",
+        "content": [
+          "Beyond the screening app, I built a scalable design system adopted by the entire Design team across 5+ domains: TB Triage, Agriculture (KKMS), Education (Swayam), and more."
+        ],
+        "subsections": [
+          {
+            "heading": "Pattern Consistency",
+            "content": [
+              "Consistency in patterns and components accelerated design velocity while maintaining clinical rigor. Components were tested across different healthcare contexts to ensure they generalized."
+            ]
+          },
+          {
+            "heading": "Cross-Domain Validation",
+            "content": [
+              "Design patterns that translated across healthcare domains, improving both user experience and the scalability of AI solutions in resource-constrained settings."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "The Outcome",
+        "content": [
+          "Clinical workflows moved from defensive (avoiding mistakes) to proactive (making confident decisions faster).",
+          "The design system enabled rapid deployment of AI-assisted tools across multiple healthcare verticals, maintaining quality and usability standards."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "govtech-population-scale",
+    "title": "GovTech at Population Scale",
+    "dateISO": "2025-01-05",
+    "tags": ["GovTech", "Public Impact", "Define", "Design", "Deliver"],
+    "excerpt": "Reduced friction for millions of public platform users.",
+    "workId": "govtech-population-scale",
+    "sections": [
+      {
+        "heading": "The Constraint",
+        "content": [
+          "Public digital platforms face a unique constraint: they serve populations with vastly different digital literacy, infrastructure access, and trust levels. Reducing friction at scale means designing for the edge cases, not the average user.",
+          "As part of the Punjab government project on their Public Redressal System, I partnered with stakeholders to streamline citizen feedback and issue resolution. The challenge wasn't building technology—it was designing processes and interfaces that citizens felt comfortable using."
+        ]
+      },
+      {
+        "heading": "Research Insights",
+        "content": [
+          "Research showed that many users were uncertain about what constituted a valid complaint, whether their submission would be heard, and how to track progress."
+        ],
+        "subsections": [
+          {
+            "heading": "Interface Clarity",
+            "content": [
+              "The solution required both interface design and process clarity—clear categories, confirmation mechanics, and transparent status tracking. Users needed to understand what happened at each step."
+            ]
+          },
+          {
+            "heading": "Trust Building",
+            "content": [
+              "Building trust meant making the system transparent and responsive. Every interaction reinforced that the platform was listening and that submissions mattered."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Scaling the Solution",
+        "content": [
+          "Scaling this to millions of users meant optimizing for mobile-first access (limited data), multiple languages, and accessibility. Each interaction layer was tested with actual users across different geographies and device constraints."
+        ]
+      },
+      {
+        "heading": "The Outcome",
+        "content": [
+          "A public platform that reduced submission friction, improved resolution times, and demonstrated that digital government services could be both scalable and genuinely user-centered.",
+          "Measurable adoption and citizen satisfaction metrics validated the approach—proof that thoughtful design could work at population scale."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "ar-hci-learning",
+    "title": "AR & HCI for Learning",
+    "dateISO": "2024-12-28",
+    "tags": ["HCI", "EdTech", "Immersive", "Design", "Deliver"],
+    "excerpt": "Immersive interactions for early childhood education.",
+    "workId": "ar-hci-learning",
+    "sections": [
+      {
+        "heading": "The Foundation",
+        "content": [
+          "Early childhood learning is fundamentally about interaction—how children explore, manipulate, and understand the world around them. Augmented Reality and human-computer interaction design can amplify this, but only when grounded in how children actually play and learn.",
+          "This project focused on designing immersive AR interactions for early education, moving beyond novelty to create meaningful pedagogical value. The goal was to blend physical play with digital augmentation in ways that felt natural and exploratory."
+        ]
+      },
+      {
+        "heading": "The Core Challenge",
+        "content": [
+          "AR interfaces designed for adults rarely work for children. Touch interactions are difficult at small scales, spatial understanding is still developing, and attention spans are shorter.",
+          "We built prototypes that prioritized direct manipulation, immediate feedback, and playful discovery."
+        ],
+        "subsections": [
+          {
+            "heading": "Interaction Patterns",
+            "content": [
+              "Through iterative testing with children, we validated patterns for gesture-based interaction, responsive audio-visual feedback, and scaffolded complexity."
+            ]
+          },
+          {
+            "heading": "Adaptive Complexity",
+            "content": [
+              "The interface adapted as children progressed, introducing new interaction possibilities as they demonstrated mastery. This kept engagement high while maintaining appropriate challenge levels."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "Key Learnings",
+        "content": [
+          "Three principles emerged from designing for children:"
+        ],
+        "subsections": [
+          {
+            "heading": "HCI Fundamentals",
+            "content": [
+              "HCI principles (direct manipulation, feedback, constraint) are even more critical in immersive environments. Children need immediate, clear responses to their actions."
+            ]
+          },
+          {
+            "heading": "Essential Playfulness",
+            "content": [
+              "Playfulness isn't decoration—it's essential for engagement and learning transfer. The interaction itself must be rewarding, not just the outcome."
+            ]
+          },
+          {
+            "heading": "User Testing",
+            "content": [
+              "Testing with actual users at each stage is non-negotiable when designing for children. Adult assumptions about usability rarely hold."
+            ]
+          }
+        ]
+      },
+      {
+        "heading": "The Outcome",
+        "content": [
+          "AR learning experiences that felt natural to children, supported educators with clear learning objectives, and demonstrated that immersive technology could enhance rather than replace hands-on play."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "finding-the-actual-problem",
+    "title": "Finding the Actual Problem",
+    "dateISO": "2025-05-12",
+    "tags": ["Discovery", "JTBD"],
+    "excerpt": "A simple loop to avoid building for the symptom, not the cause.",
+    "content": [
+      "Most teams start with a request. That's fine — it's a clue, not a requirement.",
+      "A lightweight loop: trigger → current workaround → desired outcome → constraints. If a fix doesn't improve the workaround or outcome, it's likely solution-first."
+    ]
+  },
+  {
+    "slug": "writing-crisper-prds",
+    "title": "Writing Crisper PRDs",
+    "dateISO": "2025-06-03",
+    "tags": ["Execution", "Specs"],
+    "excerpt": "Structure, not length, makes a PRD useful.",
+    "content": [
+      "Good PRDs reduce ambiguity for design and engineering. They clarify outcomes, guardrails, and edge cases.",
+      "Try: Problem, Goals/Non-goals, Users/Scenarios, Requirements, Open Questions, Metrics."
+    ]
+  }
+]
