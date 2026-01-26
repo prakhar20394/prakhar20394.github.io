@@ -11,6 +11,14 @@ node_modules
 dist
 dist-ssr
 *.local
+.vercel
+.cache
+
+# Environment
+.env
+.env.*
+.npmrc
+*.pem
 
 # Editor directories and files
 .vscode/*
@@ -22,3 +30,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Coverage / reports
+coverage
+.nyc_output
+
+# Task runners / build artifacts
+.turbo
+.parcel-cache
