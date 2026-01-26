@@ -143,11 +143,14 @@ export default function PDFModal({ isOpen, onClose, pdfUrl, fileName, title }) {
             metaData: { fileName: fileName },
           },
           {
-            embedMode: "SIZED_CONTAINER",
+            embedMode: "CONTINUOUS",
             showDownloadPDF: true,
             showPrintPDF: true,
             showLeftHandPanel: false,
             showAnnotationTools: false,
+            showPageControls: false,
+            dockPageControls: false,
+            defaultViewMode: "FIT_WIDTH",
           }
         );
       }
