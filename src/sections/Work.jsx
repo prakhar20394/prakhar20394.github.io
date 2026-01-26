@@ -17,7 +17,7 @@ import {
   PillsCloud,
   Chip,
   Accent,
-} from "../components/UI";
+} from "../components/ui";
 import styled from "styled-components";
 
 const Kicker = styled.div`

@@ -7,7 +7,7 @@ import {
   Shell,
   IntroGrid,
   IntroCard,
-} from "../components/UI";
+} from "../components/ui";
 
 export default function Hero() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import content from "../content.json";
-import { Section, Shell, H1, Accent } from "../components/UI";
+import { Section, Shell, H1, Accent } from "../components/ui";
 import styled from "styled-components";
 
 const Kicker = styled.div`
