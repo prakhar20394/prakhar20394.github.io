@@ -16,7 +16,7 @@ import {
   Hamburger,
   Bar,
   MobileMenu,
-} from "./UI";
+} from "./ui";
 
 export default function Nav({ isDarkMode, toggleDarkMode }) {
   const [navHidden, setNavHidden] = useState(false);

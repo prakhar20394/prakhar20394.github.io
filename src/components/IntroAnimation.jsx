@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GreetingLine, WaveHand, MainContent } from "../styles/IntroStyles";
-import { H1, Accent, Muted, Pill } from "./UI";
+import { H1, Accent, Muted, Pill } from "./ui";
 import styled from "styled-components";
 
 const HeroButtons = styled.div`
