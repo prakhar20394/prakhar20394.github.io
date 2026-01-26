@@ -91,7 +91,7 @@ export default function App() {
       <GlobalStyle />
       <CursorTrail isDarkMode={isDarkMode} />
       <Nav isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <main style={{ scrollBehavior: "smooth" }}>
+      <main style={{ scrollBehavior: "smooth", paddingTop: "clamp(60px, 10vw, 80px)" }}>
         <Hero />
         <About />
         <Background />
