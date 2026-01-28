@@ -33,6 +33,19 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 
+  /* Large screens (24+ inch) - increase font size for better readability */
+  @media (min-width: 1920px) {
+    html {
+      font-size: 118%; /* Larger base font for big screens */
+    }
+  }
+
+  @media (min-width: 2560px) {
+    html {
+      font-size: 125%; /* Even larger for 2K/4K displays */
+    }
+  }
+
   /* Responsive font sizing for mobile */
   @media (max-width: 768px) {
     html {

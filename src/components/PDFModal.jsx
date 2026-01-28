@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Modal = styled.div`
@@ -59,6 +59,41 @@ const ViewerContainer = styled.div`
   width: 100%;
   overflow: hidden;
   background: #525659;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const PDFIframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+`;
+
+const LoadingOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #525659;
+  color: white;
+  gap: 12px;
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+`;
+
+const Spinner = styled.div`
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 `;
 
 const CloseButton = styled.button`
@@ -119,51 +154,31 @@ const MaterialIcon = styled.span`
 `;
 
 export default function PDFModal({ isOpen, onClose, pdfUrl, fileName, title }) {
-  const pdfViewerRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!isOpen) return;
+    if (isOpen) {
+      setLoading(true);
+      setError(false);
+    }
+  }, [isOpen]);
 
-    // Load Adobe PDF Embed API
-    const script = document.createElement("script");
-    script.src = "https://documentservices.adobe.com/view-sdk/viewer.js";
-    script.async = true;
-    document.body.appendChild(script);
+  const handleLoad = () => {
+    setLoading(false);
+  };
 
-    script.onload = () => {
-      if (window.AdobeDC && pdfViewerRef.current) {
-        const adobeDCView = new window.AdobeDC.View({
-          clientId: "bf0db43412bf45feb5bff182047986aa",
-          divId: "adobe-dc-view",
-        });
-
-        adobeDCView.previewFile(
-          {
-            content: { location: { url: pdfUrl } },
-            metaData: { fileName: fileName },
-          },
-          {
-            embedMode: "CONTINUOUS",
-            showDownloadPDF: true,
-            showPrintPDF: true,
-            showLeftHandPanel: false,
-            showAnnotationTools: false,
-            showPageControls: false,
-            dockPageControls: false,
-            defaultViewMode: "FIT_WIDTH",
-          }
-        );
-      }
-    };
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
-    };
-  }, [isOpen, pdfUrl, fileName]);
+  const handleError = () => {
+    setLoading(false);
+    setError(true);
+  };
 
   if (!isOpen) return null;
+
+  // Get absolute URL for PDF
+  const absolutePdfUrl = pdfUrl.startsWith('http') 
+    ? pdfUrl 
+    : `${window.location.origin}${pdfUrl}`;
 
   return (
     <Modal onClick={onClose}>
@@ -181,10 +196,32 @@ export default function PDFModal({ isOpen, onClose, pdfUrl, fileName, title }) {
           <CloseButton onClick={onClose}>×</CloseButton>
         </ModalHeader>
         <ViewerContainer>
-          <div
-            id="adobe-dc-view"
-            ref={pdfViewerRef}
-            style={{ width: "100%", height: "100%" }}
+          {loading && (
+            <LoadingOverlay>
+              <Spinner />
+              <div style={{ fontSize: 14 }}>Loading PDF...</div>
+            </LoadingOverlay>
+          )}
+          {error && (
+            <LoadingOverlay>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>Failed to load PDF</div>
+              <div style={{ fontSize: 14, opacity: 0.8 }}>
+                <a 
+                  href={pdfUrl} 
+                  download={fileName}
+                  style={{ color: 'white', textDecoration: 'underline' }}
+                >
+                  Click here to download
+                </a>
+              </div>
+            </LoadingOverlay>
+          )}
+          <PDFIframe
+            src={`${absolutePdfUrl}#toolbar=1&navpanes=0&scrollbar=1&view=FitH`}
+            title={title || "PDF Viewer"}
+            onLoad={handleLoad}
+            onError={handleError}
+            style={{ display: (loading || error) ? 'none' : 'block' }}
           />
         </ViewerContainer>
       </ModalContent>

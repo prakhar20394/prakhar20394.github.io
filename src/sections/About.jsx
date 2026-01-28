@@ -15,6 +15,15 @@ const AboutWrapper = styled.div`
   max-width: 800px;
   margin: 0 auto;
 
+  /* Large screens - expand readable area */
+  @media (min-width: 1440px) {
+    max-width: 900px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 1000px;
+  }
+
   @media (max-width: 768px) {
     max-width: 100%;
   }
@@ -52,7 +61,7 @@ export default function About() {
             Translating  <Accent>complex</Accent> user needs  to <Accent>AI systems</Accent>.
           </H1>
             <AboutPara>
-              I hold a B.Tech in <Accent>Computer Science & Design</Accent> , from <Accent> IIIT-Delhi, 2024</Accent>, and currently work at <Accent><a href="https://ripikai.com" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none', fontStyle: 'inherit', cursor: 'pointer', opacity: 1}} onMouseEnter={(e) => e.target.style.textDecoration = 'underline'} onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>RipikAI</a></Accent> with prior experience at <Accent><a href="https://wadhwaniai.org" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none', fontStyle: 'inherit', cursor: 'pointer', opacity: 1}} onMouseEnter={(e) => e.target.style.textDecoration = 'underline'} onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>Wadhwani AI</a></Accent>
+              I hold a B.Tech in <Accent>Computer Science & Design</Accent> , from <Accent> IIIT-Delhi, 2024</Accent>, and currently work at <Accent><a href="https://ripik.ai" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none', fontStyle: 'inherit', cursor: 'pointer', opacity: 1}} onMouseEnter={(e) => e.target.style.textDecoration = 'underline'} onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>RipikAI</a></Accent> with prior experience at <Accent><a href="https://wadhwaniai.org" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none', fontStyle: 'inherit', cursor: 'pointer', opacity: 1}} onMouseEnter={(e) => e.target.style.textDecoration = 'underline'} onMouseLeave={(e) => e.target.style.textDecoration = 'none'}>Wadhwani AI</a></Accent>
             </AboutPara>
             <AboutPara>
               Translating user needs into scalable solutions through data-driven decision-making, UX research, and cross-functional team execution. Passionate about <Accent>building technology</Accent> that aligns business goals with <Accent>real-world outcomes</Accent>.

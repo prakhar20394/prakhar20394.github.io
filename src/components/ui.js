@@ -17,6 +17,11 @@ export const Section = styled.section`
   border-top: 1px solid var(--rule);
   background: var(--bg);
 
+  /* Large screens - increase padding for better spacing */
+  @media (min-width: 1920px) {
+    padding: clamp(32px, 5vw, 80px) 0;
+  }
+
   @media (max-width: ${bp.sm}) {
     padding: clamp(24px, 6vw, 40px) 0;
     min-height: 100vh;
@@ -26,6 +31,19 @@ export const Section = styled.section`
 export const Shell = styled.div`
   width: min(${bp.lg}, 92%);
   margin: 0 auto;
+
+  /* Large screens - expand max-width for better use of space */
+  @media (min-width: 1440px) {
+    width: min(1280px, 90%);
+  }
+
+  @media (min-width: 1920px) {
+    width: min(1440px, 88%);
+  }
+
+  @media (min-width: 2560px) {
+    width: min(1600px, 85%);
+  }
 
   @media (max-width: ${bp.sm}) {
     width: 90%;
@@ -171,6 +189,16 @@ export const IntroGrid = styled.div`
   align-items: center;
   grid-template-columns: 1.15fr 0.85fr;
 
+  /* Large screens - optimize grid layout */
+  @media (min-width: 1440px) {
+    gap: clamp(28px, 3vw, 48px);
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+
+  @media (min-width: 1920px) {
+    gap: clamp(40px, 3.5vw, 64px);
+  }
+
   @media (max-width: ${bp.md}) {
     grid-template-columns: 1fr;
     gap: clamp(20px, 4vw, 32px);
@@ -246,6 +274,17 @@ export const Avatar = styled.div`
   box-shadow: var(--shadow);
   margin: 0 auto;
 
+  /* Large screens - increase avatar size */
+  @media (min-width: 1440px) {
+    max-width: 480px;
+    border-radius: 28px;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 540px;
+    border-radius: 32px;
+  }
+
   @media (max-width: ${bp.md}) {
     max-width: 360px;
   }
@@ -266,6 +305,16 @@ export const Grid = styled.div`
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  /* Large screens - increase gap for better spacing */
+  @media (min-width: 1440px) {
+    gap: 18px;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 24px;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns on very large screens */
+  }
 
   @media (max-width: ${bp.md}) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -313,10 +362,16 @@ export const Sub = styled.p`
 /* --------- Background / Experience --------- */
 export const BackgroundGrid = styled.div`
   display: grid;
-  gap: clamp(20px, 3vw, 40px);
+  gap: clamp(32px, 4vw, 56px);
   grid-template-columns: 1fr 1.4fr;
+  
+  @media (min-width: 1920px) {
+    gap: clamp(48px, 5vw, 72px);
+  }
+  
   @media (max-width: ${bp.md}) {
     grid-template-columns: 1fr;
+    gap: clamp(28px, 4vw, 40px);
   }
 `;
 export const StatementWrap = styled.div``;
@@ -338,32 +393,42 @@ export const BigStatement = styled.h1`
 `;
 export const BodyPara = styled.p`
   color: var(--muted);
-  margin-top: 14px;
+  margin-top: 20px;
   max-width: 65ch;
+  line-height: 1.7;
 
   @media (max-width: ${bp.xs}) {
     font-size: 14px;
+    margin-top: 16px;
   }
 `;
 
 export const Timeline = styled.div`
   display: grid;
-  gap: 18px;
+  gap: 24px;
+  
+  @media (min-width: 1920px) {
+    gap: 32px;
+  }
 `;
 export const RoleCard = styled.div`
-  padding: 16px 0;
+  padding: 20px 0;
   border-top: 1px solid var(--rule);
 
+  @media (min-width: 1920px) {
+    padding: 28px 0;
+  }
+
   @media (max-width: ${bp.xs}) {
-    padding: 12px 0;
+    padding: 16px 0;
   }
 `;
 
 export const CompanyRow = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
+  gap: 12px;
+  margin-bottom: 10px;
 `;
 export const Logo = styled.img`
   width: 30px;
@@ -391,7 +456,8 @@ export const RoleTitle = styled.h3`
 export const Period = styled.div`
   color: var(--muted);
   font-size: 13px;
-  margin: 6px 0 8px;
+  margin: 8px 0 10px;
+  line-height: 1.5;
 `;
 export const TagRow = styled.div`
   color: var(--muted);
@@ -422,22 +488,28 @@ export const ToggleBtn = styled.button`
 
 export const Summary = styled.p`
   color: var(--muted);
-  margin: 6px 0 0;
+  margin: 10px 0 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-width: 65ch;
+  line-height: 1.6;
 
   @media (max-width: ${bp.xs}) {
     font-size: 14px;
+    margin: 8px 0 0;
   }
 `;
 
 export const Positions = styled.div`
-  margin-top: 8px;
+  margin-top: 16px;
   display: grid;
-  gap: 12px;
+  gap: 18px;
+  
+  @media (min-width: 1920px) {
+    gap: 24px;
+  }
 `;
 export const PositionTitle = styled.div`
   font-weight: 700;
@@ -445,21 +517,24 @@ export const PositionTitle = styled.div`
 export const PositionPeriod = styled.div`
   color: var(--muted);
   font-size: 12px;
+  margin-top: 4px;
 `;
 export const BulletList = styled.ul`
-  margin: 6px 0 0 0;
-  padding-left: 18px;
+  margin: 10px 0 0 0;
+  padding-left: 20px;
   color: var(--muted);
   li {
-    margin: 3px 0;
-    font-size: 13px;
-    line-height: 1.5;
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   @media (max-width: ${bp.xs}) {
-    padding-left: 16px;
+    padding-left: 18px;
+    margin: 8px 0 0 0;
     li {
-      font-size: 12px;
+      font-size: 13px;
+      margin: 4px 0;
     }
   }
 `;

@@ -71,8 +71,8 @@ export default function CursorTrail({ isDarkMode }) {
 
     // DOM star/glow configuration (kept small and efficient)
     const starConfig = {
-      starAnimationDuration: 500,
-      minimumTimeBetweenStars: 160,
+      starAnimationDuration: 200,
+      minimumTimeBetweenStars: 120,
       minimumDistanceBetweenStars: 75,
       glowDuration: 20,
       maximumGlowPointSpacing: 10,
@@ -154,10 +154,8 @@ export default function CursorTrail({ isDarkMode }) {
     window.addEventListener("resize", resize);
 
     const draw = (now) => {
-      // Fade previous frame slightly to create trailing/vanishing effect
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.fillStyle = "rgba(0,0,0,0.9)"; // fade strength
-      ctx.fillRect(0, 0, canvas.width / DPR, canvas.height / DPR);
+      // Clear canvas completely to avoid white trail residue
+      ctx.clearRect(0, 0, canvas.width / DPR, canvas.height / DPR);
 
       // Draw points additively for glow
       ctx.globalCompositeOperation = "lighter";
@@ -166,24 +164,47 @@ export default function CursorTrail({ isDarkMode }) {
       for (let i = pointsRef.current.length - 1; i >= 0; i--) {
         const p = pointsRef.current[i];
         const age = nowMs - p.t;
-        const life = 1 - age / 50; // reduced lifespan for shorter trail
+        const life = 1 - age / 350; // faster fade with shorter lifespan
         if (life <= 0) {
           pointsRef.current.splice(i, 1);
           continue;
         }
 
-        const size = p.s * (0.15 + life * 0.85);
+        // Apply drift for cosmic movement
+        p.x += p.vx || 0;
+        p.y += p.vy || 0;
 
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, size * 3);
-        g.addColorStop(0, `${trailColors.primary}${0.95 * life})`);
-        g.addColorStop(0.4, `${trailColors.primary}${0.7 * life})`);
-        g.addColorStop(0.7, `${trailColors.secondary}${0.5 * life})`);
-        g.addColorStop(1, `${trailColors.secondary}${0.02 * life})`);
+        // Sparkle/twinkle effect with sine wave
+        const twinkle = p.sparkle ? Math.sin(nowMs * 0.01 + i) * 0.3 + 0.7 : 1;
+        const brightness = (p.brightness || 1) * twinkle;
+
+        // Size varies with life, larger at start
+        const size = p.s * (0.3 + life * 0.7) * brightness;
+
+        // Create star-like glow with sharper center
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, size * 4);
+        // Linear opacity for uniform fade
+        const alpha = life * brightness;
+        
+        // Sharp bright center for star-like appearance
+        g.addColorStop(0, `${trailColors.primary}${Math.min(1, alpha * 1.2)})`); 
+        g.addColorStop(0.2, `${trailColors.primary}${alpha * 0.8})`);
+        g.addColorStop(0.5, `${trailColors.secondary}${alpha * 0.4})`);
+        g.addColorStop(0.8, `${trailColors.secondary}${alpha * 0.15})`);
+        g.addColorStop(1, `${trailColors.secondary}${alpha * 0.02})`);
 
         ctx.fillStyle = g;
         ctx.beginPath();
-        ctx.arc(p.x, p.y, size * 1.6, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, size * 2.5, 0, Math.PI * 2);
         ctx.fill();
+
+        // Add bright core for sparkle particles
+        if (p.sparkle && life > 0.3) {
+          ctx.fillStyle = `${trailColors.primary}${alpha * 0.9})`;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, size * 0.4, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
 
       rafRef.current = requestAnimationFrame(draw);
@@ -203,8 +224,8 @@ export default function CursorTrail({ isDarkMode }) {
         const dx = x - last.x;
         const dy = y - last.y;
         const dist = Math.hypot(dx, dy);
-        // denser: smaller divisor -> more interpolation points
-        const steps = Math.max(1, Math.floor(dist / 1.5));
+        // denser: smaller divisor -> more interpolation points for smoother trail
+        const steps = Math.max(1, Math.floor(dist / 0.8));
         for (let i = 0; i <= steps; i++) {
           const u = i / steps;
           // push two small particles per interpolation to increase density
@@ -212,17 +233,30 @@ export default function CursorTrail({ isDarkMode }) {
           const baseY = last.y + dy * u;
           for (let k = 0; k < 2; k++) {
             pointsRef.current.push({
-              x: baseX + (Math.random() - 0.5) * 1.2,
-              y: baseY + (Math.random() - 0.5) * 1.2,
+              x: baseX + (Math.random() - 0.5) * 0.3,
+              y: baseY + (Math.random() - 0.5) * 0.3,
               t,
-              s: Math.random() * 1.8 + 0.6,
+              s: Math.random() * 2.5 + 0.3, // wider size range for variety
+              brightness: Math.random() * 0.5 + 0.5, // shimmer effect
+              vx: (Math.random() - 0.5) * 0.1, // reduced drift for smoother look
+              vy: (Math.random() - 0.5) * 0.1 + 0.05, // reduced drift velocity y
+              sparkle: Math.random() > 0.7, // some particles sparkle more
             });
           }
         }
       } else {
         // spawn a couple of tiny points even on initial move
         for (let k = 0; k < 3; k++) {
-          pointsRef.current.push({ x: x + (Math.random() - 0.5) * 2, y: y + (Math.random() - 0.5) * 2, t, s: Math.random() * 1.8 + 0.6 });
+          pointsRef.current.push({ 
+            x: x + (Math.random() - 0.5) * 0.3, 
+            y: y + (Math.random() - 0.5) * 0.3, 
+            t, 
+            s: Math.random() * 2.5 + 0.3,
+            brightness: Math.random() * 0.5 + 0.5,
+            vx: (Math.random() - 0.5) * 0.1,
+            vy: (Math.random() - 0.5) * 0.1 + 0.05,
+            sparkle: Math.random() > 0.7,
+          });
         }
       }
 
@@ -242,7 +276,7 @@ export default function CursorTrail({ isDarkMode }) {
 
       last = { x, y };
 
-      if (pointsRef.current.length > 2500) pointsRef.current.splice(0, 600);
+      if (pointsRef.current.length > 5000) pointsRef.current.splice(0, 1000);
     };
 
     const onUp = () => (last = null);
