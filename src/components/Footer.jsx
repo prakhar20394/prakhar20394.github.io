@@ -273,7 +273,7 @@ export default function Footer() {
             <span>Building AI products that make a difference. Let's Connect!</span>
             <FooterIconsContainer>
               <FooterIconLink 
-                href="mailto:hello@prakharbhargava.in" 
+                href="mailto:prakharbhargava35@gmail.com" 
                 title="Email"
                 aria-label="Email"
               >
